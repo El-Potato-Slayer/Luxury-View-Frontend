@@ -1,7 +1,10 @@
 import {
   cleanup, fireEvent, render, screen,
 } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 import App from './App';
+import '@testing-library/jest-dom';
 
 afterEach(cleanup);
 
@@ -12,12 +15,17 @@ test('renders learn react link', () => {
   console.log(123);
 });
 
+it('Renders App component without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+});
+
 test('Renders the homepage', () => {
   render(
     <App />,
   );
   fireEvent.click(screen.getByTestId('navbar-homepage'));
-  expect(screen.getByTestId('app-homepage')).toHaveTextContent('Homepage');
+  expect(screen.getByTestId('homepage')).toHaveTextContent('Luxury View');
 });
 
 test('Renders mansions component', () => {
@@ -42,4 +50,9 @@ test('Renders agents component', () => {
   );
   fireEvent.click(screen.getByTestId('navbar-agents'));
   expect(screen.getByTestId('app-agents')).toHaveTextContent('Agents');
+});
+
+it('matches snapshot', () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
 });

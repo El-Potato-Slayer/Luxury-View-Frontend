@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -9,9 +10,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <div data-testid="app-homepage">
+            <Home />
+            {/* <div data-testid="app-homepage">
               Homepage
-            </div>
+            </div> */}
           </Route>
           <Route path="/mansions">
             <div data-testid="app-mansions">
