@@ -1,15 +1,51 @@
-function Login() {
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { setUser } from '../store/actions';
+
+function Login({ handleAuth }) {
+  const [input, setInput] = useState({
+    username: '',
+    password: '',
+  });
+  const [error, setError] = useState('');
+  // const dispatch = useDispatch();
+
+  const inputHandler = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('login', input)
+      .then((res) => {
+        localStorage.setItem('token', res.data.token);
+        handleAuth(true);
+        // dispatch(setUser(res.data));
+      })
+      .catch(() => {
+        setError('Username or password is incorrect');
+      });
+  };
+
   return (
-    <form action="">
+    <form onSubmit={handleSubmit}>
       <h2>Login</h2>
+      {error}
       <fieldset>
-        <input type="text" placeholder="username" />
+        <input type="text" name="username" placeholder="username" onChange={inputHandler} />
       </fieldset>
       <fieldset>
-        <input type="text" placeholder="password" />
+        <input type="password" name="password" placeholder="password" onChange={inputHandler} />
       </fieldset>
+      <button type="submit">Submit</button>
     </form>
   );
 }
+
+Login.propTypes = {
+  handleAuth: PropTypes.func.isRequired,
+};
 
 export default Login;
