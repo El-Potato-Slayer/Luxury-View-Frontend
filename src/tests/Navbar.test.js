@@ -1,6 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  cleanup, render, screen,
+} from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import ProtectedRoute from '../components/ProtectedRoute';
+import AppointmentsList from '../containers/AppointmentsList';
+import store from '../store/configureStore';
+
+afterEach(cleanup);
 
 test('Checks if "Home" link contains the text "Home"', () => {
   render(
@@ -40,4 +48,28 @@ test('Checks if "Agents" link contains the text "Agents"', () => {
   );
 
   expect(screen.getByTestId('navbar-agents')).toHaveTextContent('Agents');
+});
+
+test('AppointmentsList does not render if unauthorized', () => {
+  render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth={false} location="/" />
+        </Switch>
+      </BrowserRouter>
+    </Provider>,
+  );
+  expect(screen.queryByText('Appointments')).not.toBeInTheDocument();
+});
+
+test('AppointmentsList renders if authorized', () => {
+  render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth />
+      </BrowserRouter>
+    </Provider>,
+  );
+  expect(screen.queryByText('Appointments')).toBeInTheDocument();
 });

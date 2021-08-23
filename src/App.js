@@ -8,6 +8,9 @@ import Home from './components/Home';
 import { setAgents, setProperties } from './store/actions';
 import MansionsList from './containers/MansionsList';
 import AgentsList from './containers/AgentsList';
+import ProtectedRoute from './components/ProtectedRoute';
+import AppointmentsList from './containers/AppointmentsList';
+import Login from './components/Login';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,14 +36,18 @@ function App() {
           <Route path="/mansions">
             <MansionsList />
           </Route>
-          <Route path="/appointments">
+          {/* <Route path="/appointments">
             <div data-testid="app-appointments">
               <h2>Appointments</h2>
             </div>
-          </Route>
+          </Route> */}
           <Route path="/agents">
             <AgentsList />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth={false} />
         </Switch>
       </BrowserRouter>
     </div>

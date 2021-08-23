@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import '@testing-library/jest-dom';
 import store from './store/configureStore';
+import ProtectedRoute from './components/ProtectedRoute';
+import AppointmentsList from './containers/AppointmentsList';
 
 afterEach(cleanup);
 
@@ -44,16 +46,6 @@ test('Renders mansions component', () => {
   );
   fireEvent.click(screen.getByTestId('navbar-mansions'));
   expect(screen.getByTestId('mansions')).toHaveTextContent('Mansions');
-});
-
-test('Renders appointments component', () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-  );
-  fireEvent.click(screen.getByTestId('navbar-appointments'));
-  expect(screen.getByTestId('app-appointments')).toHaveTextContent('Appointments');
 });
 
 test('Renders agents component', () => {
