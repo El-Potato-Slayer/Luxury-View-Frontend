@@ -4,19 +4,22 @@ import { connect, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setAppointments } from '../store/actions';
 
-function AppointmentsList({ appointments }) {
+function AppointmentsList({ appointments, isAuth }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    axios.get('appointments', {
-      headers: {
-        Authorization: `token ${localStorage.getItem('token')}`,
-      },
-    }).then(
-      (res) => {
-        // console.log(res);
-        dispatch(setAppointments(res.data));
-      },
-    );
+    if (isAuth) {
+      axios.get('appointments', {
+        headers: {
+          Authorization: `token ${localStorage.getItem('token')}`,
+          // Authorization: `token ${user.token}`,
+        },
+      }).then(
+        (res) => {
+          // console.log(res);
+          dispatch(setAppointments(res.data));
+        },
+      );
+    }
   }, []);
 
   return (
@@ -33,10 +36,12 @@ function AppointmentsList({ appointments }) {
 
 const mapStateToProps = (state) => ({
   appointments: state.appointmentsReducer.appointments,
+  isAuth: state.authReducer.isAuth,
 });
 
 AppointmentsList.propTypes = {
   appointments: PropTypes.instanceOf(Array).isRequired,
+  isAuth: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(AppointmentsList);

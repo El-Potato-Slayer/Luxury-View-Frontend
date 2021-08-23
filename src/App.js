@@ -1,5 +1,7 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter, Redirect, Route, Switch,
+} from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -15,7 +17,6 @@ import Login from './components/Login';
 
 function App({ isAuth }) {
   const dispatch = useDispatch();
-  // const [isAuth, setIsAuth] = useState(false);
   let token;
   useEffect(() => {
     axios.get('http://localhost:3000/api/v1/properties')
@@ -31,16 +32,11 @@ function App({ isAuth }) {
       const tokenExpiration = JSON.parse(atob(token.split('.')[1])).exp;
       const dateNow = new Date();
       if (tokenExpiration > dateNow.getTime() / 1000) {
-        // setIsAuth(true);
         dispatch(setAuth(true));
       }
     }
   }, []);
-
-  // const handleAuth = (value) => {
-  //   setIsAuth(value);
-  // };
-
+  console.log(isAuth);
   return (
     <div data-testid="app" className="App">
       <BrowserRouter>
@@ -52,18 +48,14 @@ function App({ isAuth }) {
           <Route path="/mansions">
             <MansionsList />
           </Route>
-          {/* <Route path="/appointments">
-            <div data-testid="app-appointments">
-              <h2>Appointments</h2>
-            </div>
-          </Route> */}
           <Route path="/agents">
             <AgentsList />
           </Route>
           <Route path="/login">
-            <Login />
+            {/* <Login /> */}
+            {isAuth ? <Redirect to="/appointments" /> : <Login />}
           </Route>
-          <ProtectedRoute exact path="/appointments" component={AppointmentsList} isAuth={isAuth} />
+          <ProtectedRoute exact path="/appointments" component={AppointmentsList} />
         </Switch>
       </BrowserRouter>
     </div>

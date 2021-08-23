@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setAuth, setUser } from '../store/actions';
 
 function Navbar({ isAuth }) {
+  const dispatch = useDispatch();
+  const logout = () => {
+    localStorage.clear();
+    dispatch(setAuth(false));
+    dispatch(setUser({}));
+  };
+
   function authNavItem(isLoggedIn) {
-    return isLoggedIn ? <Link data-testid="navbar-logout" to="/">Logout</Link>
-      : <Link data-testid="navbar-login" to="/">Login</Link>;
+    return isLoggedIn ? <Link data-testid="navbar-logout" to="/" onClick={logout}>Logout</Link>
+      : <Link data-testid="navbar-login" to="/login">Login</Link>;
   }
 
   return (

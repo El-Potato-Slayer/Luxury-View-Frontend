@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAuth } from '../store/actions';
-// import { useDispatch } from 'react-redux';
-// import { setUser } from '../store/actions';
+import { setAuth, setUser } from '../store/actions';
 
 function Login() {
   const [input, setInput] = useState({
@@ -22,9 +20,8 @@ function Login() {
     axios.post('login', input)
       .then((res) => {
         localStorage.setItem('token', res.data.token);
+        dispatch(setUser(res.data));
         dispatch(setAuth(true));
-        // handleAuth(true);
-        // dispatch(setUser(res.data));
       })
       .catch(() => {
         setError('Username or password is incorrect');

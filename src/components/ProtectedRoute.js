@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
 
 function ProtectedRoute({ isAuth, component: Component, exact }) {
@@ -16,16 +17,22 @@ function ProtectedRoute({ isAuth, component: Component, exact }) {
 }
 
 ProtectedRoute.propTypes = {
-  isAuth: PropTypes.bool.isRequired,
+  isAuth: PropTypes.bool,
   component: PropTypes.instanceOf(Object).isRequired,
   exact: PropTypes.bool,
-  location: PropTypes.string,
+  location: PropTypes.instanceOf(Object),
 };
 
 ProtectedRoute.defaultProps = {
+  isAuth: false,
   exact: false,
-  location: '',
+  location: {},
 };
 
 // ProtectedRoute.de
-export default ProtectedRoute;
+// export default ProtectedRoute;
+const mapStateToProps = (state) => ({
+  isAuth: state.authReducer.isAuth,
+});
+
+export default connect(mapStateToProps)(ProtectedRoute);
