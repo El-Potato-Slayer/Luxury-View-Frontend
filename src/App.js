@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import { setProperties } from './store/actions';
+import { setAgents, setProperties } from './store/actions';
+import MansionsList from './containers/MansionsList';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ function App() {
     axios.get('http://localhost:3000/api/v1/properties')
       .then((resp) => {
         dispatch(setProperties(resp.data));
+      });
+    axios.get('http://localhost:3000/api/v1/agents')
+      .then((resp) => {
+        dispatch(setAgents(resp.data));
       });
   }, []);
 
@@ -23,14 +28,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-            {/* <div data-testid="app-homepage">
-              Homepage
-            </div> */}
           </Route>
           <Route path="/mansions">
-            <div data-testid="app-mansions">
-              <h2>Mansions</h2>
-            </div>
+            <MansionsList />
           </Route>
           <Route path="/appointments">
             <div data-testid="app-appointments">

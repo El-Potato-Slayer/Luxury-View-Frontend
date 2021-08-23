@@ -3,16 +3,19 @@ import { connect } from 'react-redux';
 
 function MansionsList({ mansions }) {
   return (
-    <div>
-      {mansions.map((mansion) => (
-        <p key={mansion.id}>{mansion.name}</p>
-      ))}
-    </div>
+    <>
+      <h2 data-testid="mansions">Mansions</h2>
+      <div data-testid="mansions-listing">
+        {mansions.map((mansion) => (
+          <p key={mansion.id}>{mansion.name}</p>
+        ))}
+      </div>
+    </>
   );
 }
 
 const mapStateToProps = (state) => ({
-  mansions: state.propertiesReducer.bodies,
+  mansions: state.propertiesReducer.properties,
 });
 
 MansionsList.propTypes = {
