@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import App from './App';
 import '@testing-library/jest-dom';
 import store from './store/configureStore';
-import ProtectedRoute from './components/ProtectedRoute';
-import AppointmentsList from './containers/AppointmentsList';
 
 afterEach(cleanup);
 

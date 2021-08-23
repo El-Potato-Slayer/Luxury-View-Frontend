@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setAuth } from '../store/actions';
 // import { useDispatch } from 'react-redux';
 // import { setUser } from '../store/actions';
 
-function Login({ handleAuth }) {
+function Login() {
   const [input, setInput] = useState({
     username: '',
     password: '',
   });
   const [error, setError] = useState('');
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const inputHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -21,7 +22,8 @@ function Login({ handleAuth }) {
     axios.post('login', input)
       .then((res) => {
         localStorage.setItem('token', res.data.token);
-        handleAuth(true);
+        dispatch(setAuth(true));
+        // handleAuth(true);
         // dispatch(setUser(res.data));
       })
       .catch(() => {
@@ -43,9 +45,5 @@ function Login({ handleAuth }) {
     </form>
   );
 }
-
-Login.propTypes = {
-  handleAuth: PropTypes.func.isRequired,
-};
 
 export default Login;

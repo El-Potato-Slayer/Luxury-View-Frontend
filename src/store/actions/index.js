@@ -8,6 +8,11 @@ export const setAppointments = (payload) => ({
   payload,
 });
 
+export const setAuth = (payload) => ({
+  type: 'SET_AUTH',
+  payload,
+});
+
 export const setProperties = (payload) => ({
   type: 'SET_PROPERTIES',
   payload,
