@@ -13,6 +13,11 @@ export const setProperties = (payload) => ({
   payload,
 });
 
+export const setUser = (payload) => ({
+  type: 'SET_USER',
+  payload,
+});
+
 export const changeFilter = (name) => ({
   type: 'CHANGE_FILTER',
   name,
