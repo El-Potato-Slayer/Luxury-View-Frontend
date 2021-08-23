@@ -63,7 +63,7 @@ test('Renders agents component', () => {
     </Provider>,
   );
   fireEvent.click(screen.getByTestId('navbar-agents'));
-  expect(screen.getByTestId('app-agents')).toHaveTextContent('Agents');
+  expect(screen.getByTestId('agents')).toHaveTextContent('Agents');
 });
 
 // it('matches snapshot', () => {

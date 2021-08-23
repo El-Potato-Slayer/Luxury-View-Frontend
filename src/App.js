@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import { setAgents, setProperties } from './store/actions';
 import MansionsList from './containers/MansionsList';
+import AgentsList from './containers/AgentsList';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,9 +39,7 @@ function App() {
             </div>
           </Route>
           <Route path="/agents">
-            <div data-testid="app-agents">
-              <h2>Agents</h2>
-            </div>
+            <AgentsList />
           </Route>
         </Switch>
       </BrowserRouter>

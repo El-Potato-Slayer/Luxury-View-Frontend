@@ -5,7 +5,7 @@ const initialState = {
 const agentsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_AGENTS':
-      return { ...state, properties: [...payload] };
+      return { ...state, agents: [...payload] };
     default:
       return state;
   }

@@ -5,7 +5,7 @@ const initialState = {
 const appointmentsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_APPOINTMENTS':
-      return { ...state, properties: [...payload] };
+      return { ...state, appointments: [...payload] };
     default:
       return state;
   }
