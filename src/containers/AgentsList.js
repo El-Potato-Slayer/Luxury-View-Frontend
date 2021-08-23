@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function AgentsList({ agents }) {
-  console.log(agents);
   return (
     <>
       <h2 data-testid="agents">Agents</h2>
