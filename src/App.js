@@ -17,6 +17,7 @@ import AppointmentsForm from './components/AppointmentsForm';
 import Login from './components/Login';
 import Mansion from './components/Mansion';
 import Agent from './components/Agent';
+import Appointment from './components/Appointment';
 
 function App({ isAuth }) {
   // const [redirectedLocation, setRedirectedLocation] = useState();
@@ -66,6 +67,7 @@ function App({ isAuth }) {
           </Route>
           <ProtectedRoute exact path="/appointments" component={AppointmentsList} />
           <ProtectedRoute exact path="/appointments/create" component={AppointmentsForm} />
+          <ProtectedRoute exact path="/appointments/:id" component={Appointment} />
         </Switch>
       </BrowserRouter>
     </div>
