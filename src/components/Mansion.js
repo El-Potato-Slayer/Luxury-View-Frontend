@@ -7,6 +7,11 @@ function Mansion() {
   const [mansion, setMansion] = useState({});
   const [rooms, setRooms] = useState([]);
   const [err, setErr] = useState('');
+
+  const setMansionId = () => {
+    localStorage.setItem('mansionId', id);
+  };
+
   useEffect(() => {
     axios.get(`properties/${id}`)
       .then((res) => {
@@ -35,7 +40,7 @@ function Mansion() {
         </div>
       </div>
       <p>Want to see it in-person</p>
-      <Link to="/appointment/create">Book an appointment</Link>
+      <Link to="/appointments/create" onClick={setMansionId}>Book an appointment</Link>
     </>
   );
 }

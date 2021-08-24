@@ -2,10 +2,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
 
-function ProtectedRoute({ isAuth, component: Component, exact }) {
+function ProtectedRoute({
+  isAuth, component: Component, exact, path,
+}) {
+  // const history = useHistory();
+  // console.log(history);
   return (
     <Route
       exact={exact}
+      path={path}
       render={(props) => {
         if (isAuth) {
           return <Component />;
@@ -21,6 +26,7 @@ ProtectedRoute.propTypes = {
   component: PropTypes.instanceOf(Object).isRequired,
   exact: PropTypes.bool,
   location: PropTypes.instanceOf(Object),
+  path: PropTypes.string.isRequired,
 };
 
 ProtectedRoute.defaultProps = {
