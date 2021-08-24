@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useHistory } from 'react-router-dom';
 
 function ProtectedRoute({
   isAuth, component: Component, exact, path,
 }) {
-  // const history = useHistory();
-  // console.log(history);
+  const history = useHistory();
+  console.log(history.location);
   return (
     <Route
       exact={exact}
       path={path}
       render={(props) => {
         if (isAuth) {
+          localStorage.setItem('redirectedLocation', history.location.pathname);
           return <Component />;
         }
         return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />;
