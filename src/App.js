@@ -14,6 +14,7 @@ import AgentsList from './containers/AgentsList';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppointmentsList from './containers/AppointmentsList';
 import Login from './components/Login';
+import Mansion from './components/Mansion';
 
 function App({ isAuth }) {
   const dispatch = useDispatch();
@@ -45,15 +46,17 @@ function App({ isAuth }) {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/mansions">
+          <Route exact path="/mansions">
             <MansionsList />
           </Route>
-          <Route path="/agents">
+          <Route exact path="/agents">
             <AgentsList />
           </Route>
           <Route path="/login">
-            {/* <Login /> */}
             {isAuth ? <Redirect to="/appointments" /> : <Login />}
+          </Route>
+          <Route path="/mansions/:id">
+            <Mansion />
           </Route>
           <ProtectedRoute exact path="/appointments" component={AppointmentsList} />
         </Switch>
