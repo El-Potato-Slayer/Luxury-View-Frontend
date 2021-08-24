@@ -7,7 +7,6 @@ function Mansion() {
   const [mansion, setMansion] = useState({});
   const [rooms, setRooms] = useState([]);
   const [err, setErr] = useState('');
-  console.log(id);
   useEffect(() => {
     axios.get(`properties/${id}`)
       .then((res) => {

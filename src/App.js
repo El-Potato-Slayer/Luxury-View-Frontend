@@ -37,7 +37,6 @@ function App({ isAuth }) {
       }
     }
   }, []);
-  console.log(isAuth);
   return (
     <div data-testid="app" className="App">
       <BrowserRouter>
@@ -74,5 +73,3 @@ App.propTypes = {
 };
 
 export default connect(mapStateToProps)(App);
-
-// export default App;
