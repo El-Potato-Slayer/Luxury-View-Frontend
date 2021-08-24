@@ -6,7 +6,6 @@ function ProtectedRoute({
   isAuth, component: Component, exact, path,
 }) {
   const history = useHistory();
-  console.log(history.location);
   return (
     <Route
       exact={exact}
