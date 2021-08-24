@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function AgentsList({ agents }) {
   return (
@@ -7,7 +8,7 @@ function AgentsList({ agents }) {
       <h2 data-testid="agents">Agents</h2>
       <div data-testid="agents-listing">
         {agents.map((agent) => (
-          <p key={agent.id}>{agent.first_name}</p>
+          <Link to={`/agents/${agent.id}`} key={agent.id}>{agent.first_name}</Link>
         ))}
       </div>
     </>

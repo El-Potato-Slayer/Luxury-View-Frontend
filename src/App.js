@@ -15,6 +15,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AppointmentsList from './containers/AppointmentsList';
 import Login from './components/Login';
 import Mansion from './components/Mansion';
+import Agent from './components/Agent';
 
 function App({ isAuth }) {
   const dispatch = useDispatch();
@@ -56,6 +57,9 @@ function App({ isAuth }) {
           </Route>
           <Route path="/mansions/:id">
             <Mansion />
+          </Route>
+          <Route path="/agents/:id">
+            <Agent />
           </Route>
           <ProtectedRoute exact path="/appointments" component={AppointmentsList} />
         </Switch>
