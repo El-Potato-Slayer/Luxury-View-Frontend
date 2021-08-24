@@ -1,9 +1,15 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { setAuth, setUser } from '../store/actions';
 
 function Login() {
+  const history = useHistory();
+
+  if (history.location.state) {
+    localStorage.setItem('redirectedLocation', history.location.state.from.pathname);
+  }
   const [input, setInput] = useState({
     username: '',
     password: '',

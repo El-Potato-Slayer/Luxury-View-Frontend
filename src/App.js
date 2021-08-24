@@ -13,11 +13,13 @@ import MansionsList from './containers/MansionsList';
 import AgentsList from './containers/AgentsList';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppointmentsList from './containers/AppointmentsList';
+import AppointmentsForm from './components/AppointmentsForm';
 import Login from './components/Login';
 import Mansion from './components/Mansion';
 import Agent from './components/Agent';
 
 function App({ isAuth }) {
+  // const [redirectedLocation, setRedirectedLocation] = useState();
   const dispatch = useDispatch();
   let token;
   useEffect(() => {
@@ -38,6 +40,7 @@ function App({ isAuth }) {
       }
     }
   }, []);
+
   return (
     <div data-testid="app" className="App">
       <BrowserRouter>
@@ -53,7 +56,7 @@ function App({ isAuth }) {
             <AgentsList />
           </Route>
           <Route path="/login">
-            {isAuth ? <Redirect to="/appointments" /> : <Login />}
+            {isAuth ? <Redirect to={localStorage.getItem('redirectedLocation')} /> : <Login />}
           </Route>
           <Route path="/mansions/:id">
             <Mansion />
@@ -62,6 +65,7 @@ function App({ isAuth }) {
             <Agent />
           </Route>
           <ProtectedRoute exact path="/appointments" component={AppointmentsList} />
+          <ProtectedRoute exact path="/appointments/create" component={AppointmentsForm} />
         </Switch>
       </BrowserRouter>
     </div>
