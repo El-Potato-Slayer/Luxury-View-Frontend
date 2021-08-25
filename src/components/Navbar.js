@@ -12,8 +12,19 @@ function Navbar({ isAuth }) {
   };
 
   function authNavItem(isLoggedIn) {
-    return isLoggedIn ? <Link data-testid="navbar-logout" to="/" onClick={logout}>Logout</Link>
-      : <Link data-testid="navbar-login" to="/login">Login</Link>;
+    // return isLoggedIn ? <Link data-testid="navbar-logout" to="/" onClick={logout}>Logout</Link>
+    //   : <Link data-testid="navbar-login" to="/login">Login</Link>;
+    if (isLoggedIn) {
+      return (
+        <Link data-testid="navbar-logout" to="/" onClick={logout}>Logout</Link>
+      );
+    }
+    return (
+      <>
+        <Link data-testid="navbar-login" to="/login">Login</Link>
+        <Link data-testid="navbar-register" to="/register">Register</Link>
+      </>
+    );
   }
 
   return (

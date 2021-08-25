@@ -18,6 +18,7 @@ import Login from './components/Login';
 import Mansion from './components/Mansion';
 import Agent from './components/Agent';
 import Appointment from './components/Appointment';
+import Register from './components/Register';
 
 function App({ isAuth }) {
   // const [redirectedLocation, setRedirectedLocation] = useState();
@@ -58,6 +59,9 @@ function App({ isAuth }) {
           </Route>
           <Route path="/login">
             {isAuth ? <Redirect to={localStorage.getItem('redirectedLocation')} /> : <Login />}
+          </Route>
+          <Route path="/register">
+            {isAuth ? <Redirect to="/" /> : <Register />}
           </Route>
           <Route path="/mansions/:id">
             <Mansion />
