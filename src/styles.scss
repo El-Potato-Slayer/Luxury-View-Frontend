@@ -1,1 +1,41 @@
-@import './styles/MansionsList'
+*, 
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+img{
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.page {
+  margin: 0 1.25rem;
+}
+
+.page-title {
+  display: grid;
+  place-items: center;
+  font-weight: 400;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .page {
+    margin: 0 2.75rem;
+  }
+}
+
+@import './styles/variables';
+@import './styles/MansionsList';

@@ -1,0 +1,59 @@
+.mansions-listings {
+  display: grid;
+  gap: 2rem;
+}
+
+.mansions-listing-details {
+  .background{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 375/230;
+    // object-fit: cover;
+  }
+  
+}
+
+.info > *{
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.mansions-listing-price {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.mansions-listing-room {
+  color: $gray;
+}
+
+.mansions-listing-agent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px $light-gray solid;
+  p {
+    color: $gray;
+    margin: 1rem;
+  }
+
+  img{
+    width: 3rem;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mansions-listings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mansions-listings {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

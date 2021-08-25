@@ -9,7 +9,7 @@ function MansionsList({ mansions }) {
 
   function listRooms(mansion) {
     return (
-      <p>
+      <p className="mansions-listing-room">
         {filteredRooms(mansion).map((room) => (
           <>
             <span>
@@ -31,35 +31,48 @@ function MansionsList({ mansions }) {
     );
   }
 
+  function priceOutput(price) {
+    return parseInt(price, 10).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   function listMansionDetails(mansion) {
     return (
-      <Link to={`/mansions/${mansion.id}`}>
-        <img src={mansion.picture} alt="" />
-        <p>
-          $
-          {mansion.price}
-        </p>
-        <p>{mansion.name}</p>
-        {listRooms(mansion)}
+      <Link to={`/mansions/${mansion.id}`} className="mansions-listing-details">
+        <div className="wrapper">
+          <div
+            className="background"
+            style={{ background: `url(${mansion.picture}) center / cover` }}
+          />
+          <div className="info">
+            <p className="mansions-listing-price">
+              $&nbsp;
+              {priceOutput(mansion.price)}
+            </p>
+            <p>{mansion.name}</p>
+            {listRooms(mansion)}
+          </div>
+        </div>
       </Link>
     );
   }
 
   function listAgent(mansion) {
     return (
-      <Link to={`agents/${mansion.agent.id}`} className="mansion-list-agent">
-        <span>{mansion.agent.first_name}</span>
-        &nbsp;
-        <span>{mansion.agent.last_name}</span>
+      <Link to={`agents/${mansion.agent.id}`} className="mansions-listing-agent">
+        <p>
+          <span>{mansion.agent.first_name}</span>
+          &nbsp;
+          <span>{mansion.agent.last_name}</span>
+        </p>
         <img src={mansion.agent.picture} alt="agent" />
       </Link>
     );
   }
 
   return (
-    <>
-      <h2 data-testid="mansions">Mansions</h2>
-      <div data-testid="mansions-listing">
+    <div className="page">
+      <h2 data-testid="mansions" className="page-title">Mansions</h2>
+      <div data-testid="mansions-listings" className="mansions-listings">
         {mansions.map((mansion) => (
           <div key={mansion.id}>
             {listMansionDetails(mansion)}
@@ -67,7 +80,7 @@ function MansionsList({ mansions }) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
