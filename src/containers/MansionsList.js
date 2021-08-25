@@ -9,7 +9,7 @@ function MansionsList({ mansions }) {
 
   function listRooms(mansion) {
     return (
-      <p className="mansions-listing-room">
+      <p className="listing-room">
         {filteredRooms(mansion).map((room) => (
           <>
             <span>
@@ -37,14 +37,14 @@ function MansionsList({ mansions }) {
 
   function listMansionDetails(mansion) {
     return (
-      <Link to={`/mansions/${mansion.id}`} className="mansions-listing-details">
-        <div className="wrapper">
+      <Link to={`/mansions/${mansion.id}`}>
+        <div>
           <div
-            className="background"
+            className="listing-image"
             style={{ background: `url(${mansion.picture}) center / cover` }}
           />
           <div className="info">
-            <p className="mansions-listing-price">
+            <p className="listing-important">
               $&nbsp;
               {priceOutput(mansion.price)}
             </p>
@@ -58,7 +58,7 @@ function MansionsList({ mansions }) {
 
   function listAgent(mansion) {
     return (
-      <Link to={`agents/${mansion.agent.id}`} className="mansions-listing-agent">
+      <Link to={`agents/${mansion.agent.id}`} className="listing-agent">
         <p>
           <span>{mansion.agent.first_name}</span>
           &nbsp;
@@ -72,7 +72,7 @@ function MansionsList({ mansions }) {
   return (
     <div className="page">
       <h2 data-testid="mansions" className="page-title">Mansions</h2>
-      <div data-testid="mansions-listings" className="mansions-listings">
+      <div data-testid="listings" className="listings">
         {mansions.map((mansion) => (
           <div key={mansion.id}>
             {listMansionDetails(mansion)}

@@ -20,6 +20,10 @@ a {
   color: black;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .page {
   margin: 0 1.25rem;
 }
@@ -39,16 +43,58 @@ a {
   }
 }
 
-.mansions-listings {
+.text-success {
+  color: #4CAF50;
+}
+
+.text-info {
+  color: #2196F3;
+}
+
+.text-warning {
+  color: #FF9800;
+}
+
+.text-error {
+  color: #F44336;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.bg-success {
+  background-color: #4CAF50;
+}
+
+.bg-info {
+  background-color: #2196F3;
+}
+
+.bg-warning {
+  background-color: #FF9800;
+}
+
+.bg-error {
+  background-color: #F44336;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.listings {
   display: -ms-grid;
   display: grid;
   gap: 2rem;
-}
-
-.mansions-listing-details .background {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 375/230;
 }
 
 .info > * {
@@ -56,17 +102,23 @@ a {
   font-size: 0.875rem;
 }
 
-.mansions-listing-price {
-  font-weight: bold;
+.listing-image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 375/230;
+}
+
+.listing-important {
+  font-weight: 600;
   font-size: 1rem;
   margin-top: 1rem;
 }
 
-.mansions-listing-room {
+.listing-room {
   color: #606060;
 }
 
-.mansions-listing-agent {
+.listing-agent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,12 +131,12 @@ a {
   border-top: 1px #e0e0e0 solid;
 }
 
-.mansions-listing-agent p {
+.listing-agent p {
   color: #606060;
   margin: 1rem;
 }
 
-.mansions-listing-agent img {
+.listing-agent img {
   width: 3rem;
   height: 100%;
   -o-object-fit: contain;
@@ -93,16 +145,43 @@ a {
 }
 
 @media only screen and (min-width: 768px) {
-  .mansions-listings {
+  .listings {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .mansions-listings {
+  .listings {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.user-buttons {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user-buttons > a {
+  background: #2196F3;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}
+
+.user-buttons > button {
+  background-color: #F44336;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4em;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=styles.css.map */

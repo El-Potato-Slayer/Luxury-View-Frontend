@@ -1,16 +1,6 @@
-.mansions-listings {
+.listings {
   display: grid;
   gap: 2rem;
-}
-
-.mansions-listing-details {
-  .background{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 375/230;
-    // object-fit: cover;
-  }
-  
 }
 
 .info > *{
@@ -18,17 +8,24 @@
   font-size: 0.875rem;
 }
 
-.mansions-listing-price {
-  font-weight: bold;
+.listing-image{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 375/230;
+  // object-fit: cover;
+}
+
+.listing-important {
+  font-weight: 600;
   font-size: 1rem;
   margin-top: 1rem;
 }
 
-.mansions-listing-room {
+.listing-room {
   color: $gray;
 }
 
-.mansions-listing-agent {
+.listing-agent {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,13 +44,13 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .mansions-listings {
+  .listings {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .mansions-listings {
+  .listings {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -66,13 +66,50 @@ function AppointmentsList({ appointments }) {
   function userButtons(error, id) {
     if (!error) {
       return (
-        <div>
-          <button type="button" onClick={() => deleteAppointment(id)}>Delete</button>
-        </div>
+        <button type="button" onClick={() => deleteAppointment(id)}>Cancel</button>
       );
     }
 
     return null;
+  }
+
+  function formatDate(date) {
+    const d = new Date(date);
+    let arr = d.toString().split(' ').splice(0, 5);
+    const time = arr[4].split(':').splice(0, 2).join(':');
+    arr = arr.splice(0, 4);
+    return `Date: ${arr.join(' ').concat(` ${time}`)}`;
+
+    // return date.toLocaleFormat('MMMM d, yyyy h:mm aa');
+  }
+
+  function displayAppointment(appointment) {
+    return (
+      <div>
+        <div className="listing-image" style={{ background: `url(${appointment.property.picture}) center / cover` }} />
+        <div className="info">
+          <p className="listing-important">{formatDate(appointment.date)}</p>
+          <p>
+            Property:
+            {' '}
+            <Link
+              to={`mansions/${appointment.property.id}`}
+              className="text-info"
+            >
+              {appointment.property.name}
+            </Link>
+          </p>
+        </div>
+        <div className="user-buttons">
+          <Link
+            to={`appointments/${appointment.id}`}
+          >
+            Appointment Details
+          </Link>
+          {userButtons(fetchError, appointment.id)}
+        </div>
+      </div>
+    );
   }
 
   useEffect(() => {
@@ -80,21 +117,18 @@ function AppointmentsList({ appointments }) {
   }, []);
 
   return (
-    <>
-      <h1 data-testid="appointments">Appointments</h1>
+    <div className="page">
+      <h1 data-testid="appointments" className="page-title">Appointments</h1>
       {showSuccess(success)}
       {showDeleteError(deleteError)}
-      <div>
+      <div className="listings">
         {currentAppointments.map((appointment) => (
-          <div key={appointment.id}>
-            <p>{appointment.property.name}</p>
-            <p>{appointment.date}</p>
-            <Link to={`appointments/${appointment.id}`}>View</Link>
-            {userButtons(fetchError, appointment.id)}
+          <div key={appointment.id} className="appointment-card">
+            {displayAppointment(appointment)}
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
