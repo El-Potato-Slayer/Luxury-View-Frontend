@@ -1,16 +1,8 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function MansionsList({ mansions }) {
-  // const [rooms, setRooms] = useState([]);
-  useEffect(() => {
-    // console.log(mansions[0].rooms);
-    // setRooms(mansions.rooms);
-    // console.log(rooms);
-  }, []);
-
   const filteredRooms = (mansion) => mansion.rooms.filter((room) => (
     room.name === 'Bedrooms' || room.name === 'Bathrooms'
   ));
