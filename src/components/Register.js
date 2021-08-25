@@ -17,7 +17,6 @@ function Register() {
 
   const inputHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
-    console.log(input);
   };
 
   function displayError(error) {
@@ -37,7 +36,6 @@ function Register() {
         localStorage.setItem('token', res.data.token);
         dispatch(setUser(res.data));
         dispatch(setAuth(true));
-        console.log(res.data);
       })
       .catch(() => {
         setError('Username or password is incorrect');
