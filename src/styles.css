@@ -25,7 +25,7 @@ button:hover {
 }
 
 .page {
-  margin: 0 1.25rem;
+  margin: 0 1.25rem 4rem;
 }
 
 .page-title {
@@ -37,9 +37,9 @@ button:hover {
   font-size: 2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .page {
-    margin: 0 2.75rem;
+    margin: 0 2.75rem 4rem;
   }
 }
 
@@ -89,6 +89,39 @@ button:hover {
 
 .bg-black {
   background-color: #000000;
+}
+
+.info-button {
+  background: #2196F3;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}
+
+.success-button {
+  background: #4CAF50;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+  display: block;
+}
+
+.warning-button {
+  background: #FF9800;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}
+
+.error-button {
+  background: #F44336;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
 }
 
 .listings {
@@ -183,5 +216,120 @@ button:hover {
   border: none;
   border-radius: 0.4em;
   font-size: 1rem;
+}
+
+.mansion-header {
+  display: -ms-grid;
+  display: grid;
+}
+
+.mansion-features {
+  display: -ms-grid;
+  display: grid;
+}
+
+.mansion-title {
+  text-align: center;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.room-features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.room-features:nth-of-type(odd) {
+  background: #e0e0e0;
+}
+
+.mansion-description {
+  margin: 2rem 0;
+}
+
+.mansion-agent .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0;
+}
+
+.mansion-agent .contact > * {
+  padding: 1rem 0;
+  color: #2196F3;
+}
+
+.mansion-agent .contact > :first-child {
+  border-top: 1px #e0e0e0 solid;
+  border-bottom: 1px #e0e0e0 solid;
+}
+
+.mansion-agent .contact > :last-child {
+  border-bottom: 1px #e0e0e0 solid;
+}
+
+.mansion-agent-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mansion-agent-details img {
+  width: 3rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.mansion-apt-wrapper {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .mansion-header {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
+  .mansion-header .mansion-title {
+    text-align: end;
+  }
+  .mansion-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mansion-agent .contact {
+    margin: 0;
+  }
+  .mansion-description {
+    margin: 2rem 0;
+    padding-right: 2rem;
+    max-width: 70ch;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

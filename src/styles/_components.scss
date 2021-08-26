@@ -1,0 +1,30 @@
+.info-button{
+  background: $info;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}
+
+.success-button{
+  background: $success;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+  display: block;
+}
+.warning-button{
+  background: $warning;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}
+.error-button{
+  background: $error;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+}

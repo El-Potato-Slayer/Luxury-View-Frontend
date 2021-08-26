@@ -24,7 +24,7 @@ button:hover{
 }
 
 .page {
-  margin: 0 1.25rem;
+  margin: 0 1.25rem 4rem;
 }
 
 .page-title {
@@ -35,13 +35,15 @@ button:hover{
   font-size: 2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .page {
-    margin: 0 2.75rem;
+    margin: 0 2.75rem 4rem;
   }
 }
 
 @import './styles/variables';
 @import './styles/notifications';
+@import './styles/components';
 @import './styles/Listings';
 @import './styles/AppointmentsList';
+@import './styles/Mansion';
