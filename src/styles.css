@@ -28,6 +28,10 @@ button:hover {
   margin: 0 1.25rem 4rem;
 }
 
+.page-margin {
+  margin: 0 1.25rem 4rem;
+}
+
 .page-title {
   display: -ms-grid;
   display: grid;
@@ -39,6 +43,12 @@ button:hover {
 
 @media only screen and (min-width: 1024px) {
   .page {
+    margin: 0 2.75rem 4rem;
+  }
+  .page-margin {
+    margin: 0 2.75rem 4rem;
+  }
+  .image-margin {
     margin: 0 2.75rem 4rem;
   }
 }
@@ -330,6 +340,54 @@ button:hover {
     margin: 2rem 0;
     padding-right: 2rem;
     max-width: 70ch;
+  }
+}
+
+.appointment-info {
+  display: -ms-grid;
+  display: grid;
+}
+
+.appointment-info > :nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.appointment-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.appointment-pic {
+  max-height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+  .appointment-info {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .appointment-info > :first-child {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .appointment-title {
+    font-size: 2.75rem;
+  }
+  .appointment-agent {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */

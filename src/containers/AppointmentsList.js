@@ -79,8 +79,6 @@ function AppointmentsList({ appointments }) {
     const time = arr[4].split(':').splice(0, 2).join(':');
     arr = arr.splice(0, 4);
     return `Date: ${arr.join(' ').concat(` ${time}`)}`;
-
-    // return date.toLocaleFormat('MMMM d, yyyy h:mm aa');
   }
 
   function displayAppointment(appointment) {

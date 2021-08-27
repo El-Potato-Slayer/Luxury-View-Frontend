@@ -27,6 +27,10 @@ button:hover{
   margin: 0 1.25rem 4rem;
 }
 
+.page-margin {
+  margin: 0 1.25rem 4rem;
+}
+
 .page-title {
   display: grid;
   place-items: center;
@@ -39,6 +43,14 @@ button:hover{
   .page {
     margin: 0 2.75rem 4rem;
   }
+
+  .page-margin {
+    margin: 0 2.75rem 4rem;
+  }
+
+  .image-margin {
+    margin: 0 2.75rem 4rem;
+  }
 }
 
 @import './styles/variables';
@@ -47,3 +59,4 @@ button:hover{
 @import './styles/Listings';
 @import './styles/AppointmentsList';
 @import './styles/Mansion';
+@import './styles/Appointment';
