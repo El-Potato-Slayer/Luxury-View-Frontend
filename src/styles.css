@@ -107,6 +107,7 @@ button:hover {
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }
 
 .success-button {
@@ -116,6 +117,7 @@ button:hover {
   border-radius: 0.4em;
   font-size: 1rem;
   display: block;
+  border: none;
 }
 
 .warning-button {
@@ -124,6 +126,7 @@ button:hover {
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }
 
 .error-button {
@@ -132,6 +135,7 @@ button:hover {
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }
 
 .listings {
@@ -389,5 +393,32 @@ button:hover {
   .appointment-agent {
     margin: 0;
   }
+}
+
+.appointments-form {
+  text-align: center;
+}
+
+.appointments-form .sub-title {
+  font-weight: 500;
+}
+
+.appointments-form > * {
+  margin: 2rem 0;
+}
+
+.appointments-form > :last-child {
+  margin: 0;
+}
+
+.date-input {
+  border: none;
+}
+
+.react-datepicker-popper {
+  left: 50% !important;
+  top: 50% !important;
+  -webkit-transform: translate(-75%, 0%) !important;
+          transform: translate(-75%, 0%) !important;
 }
 /*# sourceMappingURL=styles.css.map */

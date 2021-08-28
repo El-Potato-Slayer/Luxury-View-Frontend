@@ -4,6 +4,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }
 
 .success-button{
@@ -13,6 +14,7 @@
   border-radius: 0.4em;
   font-size: 1rem;
   display: block;
+  border: none;
 }
 .warning-button{
   background: $warning;
@@ -20,6 +22,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }
 .error-button{
   background: $error;
@@ -27,4 +30,5 @@
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
+  border: none;
 }

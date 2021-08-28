@@ -1,0 +1,26 @@
+.appointments-form{
+  text-align: center;
+  
+  .sub-title{
+    font-weight: 500;
+  }
+
+  & > * {
+    margin: 2rem 0;
+  }
+
+  & > :last-child{
+    margin: 0;
+  }
+}
+
+.date-input {
+  border: none;
+
+}
+
+.react-datepicker-popper{
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-75%, 0%) !important;
+}

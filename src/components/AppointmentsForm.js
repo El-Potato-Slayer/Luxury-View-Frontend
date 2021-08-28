@@ -69,7 +69,7 @@ function AppointmentsForm() {
     if (!error) {
       return (
         <section>
-          <h3>Property</h3>
+          <h3 className="sub-title">Property</h3>
           <p>{mansion.name}</p>
           <p>{mansion.Price}</p>
         </section>
@@ -82,7 +82,7 @@ function AppointmentsForm() {
     if (!error) {
       return (
         <section>
-          <h3>Agent</h3>
+          <h3 className="sub-title">Agent</h3>
           <p>
             {agent.first_name}
             &nbsp;
@@ -99,7 +99,7 @@ function AppointmentsForm() {
     if (!error) {
       return (
         <>
-          <fieldset>
+          <fieldset className="date-input">
             <p>
               Please choose a time between 9am and 4pm, and
               {' '}
@@ -115,7 +115,7 @@ function AppointmentsForm() {
               dateFormat="MMMM d, yyyy h:mm aa"
             />
           </fieldset>
-          <button type="submit" onClick={createAppointment}>Submit</button>
+          <button type="submit" className="info-button" onClick={createAppointment}>Submit</button>
         </>
       );
     }
@@ -127,14 +127,14 @@ function AppointmentsForm() {
   }, []);
 
   return (
-    <>
-      <h2>Create an appointment</h2>
+    <div className="page-margin appointments-form">
+      <h2 className="page-title">Create an appointment</h2>
       {displaySuccess(success)}
       {displayError(error)}
       {displayMansionInformation(error, mansion)}
       {displayAgentInformation(error, agent)}
       {displayDate(error)}
-    </>
+    </div>
   );
 }
 
