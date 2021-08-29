@@ -43,28 +43,28 @@ function Register() {
   };
 
   return (
-    <>
-      <h2>Register</h2>
+    <div className="form-wrapper">
       {displayError(error)}
-      <form action="">
+      <form className="form">
+        <h2 className="page-title">Register</h2>
         <fieldset>
-          <input type="text" placeholder="First Name" name="first_name" onChange={inputHandler} />
+          <input className="input-field" type="text" placeholder="First Name" name="first_name" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input type="text" placeholder="Last Name" name="last_name" onChange={inputHandler} />
+          <input className="input-field" type="text" placeholder="Last Name" name="last_name" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input type="text" placeholder="Username" name="username" onChange={inputHandler} />
+          <input className="input-field" type="text" placeholder="Username" name="username" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input type="text" placeholder="Email" name="email" onChange={inputHandler} />
+          <input className="input-field" type="text" placeholder="Email" name="email" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input type="text" placeholder="Password" name="password" onChange={inputHandler} />
+          <input className="input-field" type="text" placeholder="Password" name="password" onChange={inputHandler} />
         </fieldset>
-        <button type="submit" onClick={registerUser}>Submit</button>
+        <button className="info-button" type="submit" onClick={registerUser}>Submit</button>
       </form>
-    </>
+    </div>
   );
 }
 
