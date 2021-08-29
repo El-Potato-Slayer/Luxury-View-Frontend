@@ -21,8 +21,7 @@ function Login() {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  function postLogin() {
     axios.post('login', input)
       .then((res) => {
         localStorage.setItem('token', res.data.token);
@@ -32,20 +31,27 @@ function Login() {
       .catch(() => {
         setError('Username or password is incorrect');
       });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postLogin();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      {error}
-      <fieldset>
-        <input type="text" name="username" placeholder="username" onChange={inputHandler} />
-      </fieldset>
-      <fieldset>
-        <input type="password" name="password" placeholder="password" onChange={inputHandler} />
-      </fieldset>
-      <button type="submit">Submit</button>
-    </form>
+    <div className="form-wrapper">
+      <form className="form" onSubmit={handleSubmit}>
+        {error}
+        <h2 className="page-title">Login</h2>
+        <fieldset>
+          <input className="input-field" type="text" name="username" placeholder="username" onChange={inputHandler} />
+        </fieldset>
+        <fieldset>
+          <input className="input-field" type="password" name="password" placeholder="password" onChange={inputHandler} />
+        </fieldset>
+        <button className="info-button" type="submit">Submit</button>
+      </form>
+    </div>
   );
 }
 
