@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { priceOutput } from '../helpers';
 
 function MansionsList({ mansions }) {
   const filteredRooms = (mansion) => mansion.rooms.filter((room) => (
@@ -29,10 +30,6 @@ function MansionsList({ mansions }) {
         </span>
       </p>
     );
-  }
-
-  function priceOutput(price) {
-    return parseInt(price, 10).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   function listMansionDetails(mansion) {
