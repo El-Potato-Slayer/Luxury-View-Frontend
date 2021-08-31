@@ -673,8 +673,8 @@ fieldset {
   z-index: 3;
   background: #ffffff;
   border-right: 1px solid #e0e0e0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .navbar.open {
@@ -725,8 +725,8 @@ fieldset {
   position: absolute;
   top: 1rem;
   right: -2.75rem;
-  -webkit-transition: 1s all ease-in-out;
-  transition: 1s all ease-in-out;
+  -webkit-transition: 0.75s all ease-in-out;
+  transition: 0.75s all ease-in-out;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 0.125rem;
   padding: 0.125rem;
