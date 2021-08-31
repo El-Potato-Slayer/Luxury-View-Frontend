@@ -6,7 +6,8 @@ function Agent() {
   const { id } = useParams();
   const [agent, setAgent] = useState({});
   const [err, setErr] = useState('');
-  useEffect(() => {
+
+  function fetchAgent(id) {
     axios.get(`agents/${id}`)
       .then((res) => {
         setAgent(res.data);
@@ -14,7 +15,7 @@ function Agent() {
       .catch(() => {
         setErr('Agent information could not be fetched');
       });
-  }, []);
+  }
 
   function displayError(error) {
     if (error !== '') {
@@ -23,10 +24,44 @@ function Agent() {
     return null;
   }
 
+  function displayAgent(error, agent) {
+    if (!error) {
+      return (
+        <>
+          <div className="agent-picture-wrapper">
+            <img className="agent-picture" src={agent.picture} alt="" />
+          </div>
+          <div className="agent-details">
+            <p className="page-title">
+              {agent.first_name}
+              {' '}
+              {agent.last_name}
+            </p>
+            <p>
+              <a href={`mailto:${agent.email}`} className="text-info">
+                {agent.email}
+              </a>
+            </p>
+            <p>
+              <a href={`tel:${agent.number}`} className="text-info">
+                {agent.number}
+              </a>
+            </p>
+          </div>
+        </>
+      );
+    }
+    return null;
+  }
+
+  useEffect(() => {
+    fetchAgent(id);
+  }, []);
+
   return (
     <>
       {displayError(err)}
-      {agent.first_name}
+      {displayAgent(err, agent)}
     </>
   );
 }

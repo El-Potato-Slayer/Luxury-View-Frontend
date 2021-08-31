@@ -40,7 +40,7 @@ fieldset {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  font-weight: 400;
+  font-weight: 300;
   margin: 2rem 0;
   font-size: 2rem;
 }
@@ -799,5 +799,42 @@ fieldset {
   width: 100%;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.agent-picture-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 4rem 0;
+}
+
+.agent-picture-wrapper::before {
+  content: "";
+  height: 0.125rem;
+  width: 100%;
+  background: #e0e0e0;
+}
+
+.agent-picture-wrapper::after {
+  content: "";
+  height: 0.125rem;
+  width: 100%;
+  background: #e0e0e0;
+}
+
+.agent-picture {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.agent-details {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

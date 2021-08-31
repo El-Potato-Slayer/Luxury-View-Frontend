@@ -38,7 +38,7 @@ fieldset {
 .page-title {
   display: grid;
   place-items: center;
-  font-weight: 400;
+  font-weight: 300;
   margin: 2rem 0;
   font-size: 2rem;
 }
@@ -69,3 +69,4 @@ fieldset {
 @import './styles/Home';
 @import './styles/Navbar';
 @import './styles/hambuger-menu';
+@import './styles/Agent';
