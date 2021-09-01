@@ -1,0 +1,414 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="App"
+  data-testid="app"
+>
+  <div
+    className="navbar"
+    data-testid="navbar"
+  >
+    <div
+      aria-hidden="true"
+      className="dark-filter hide"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    />
+    <div
+      className="burger"
+    >
+      <button
+        className="burger-wrapper"
+        id="burger-wrapper"
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="burger-menu"
+          id="burger-menu"
+        />
+      </button>
+    </div>
+    <img
+      alt=""
+      className="nav-logo"
+      src="/assets/logo.png"
+    />
+    <div
+      className="nav-links"
+    >
+      <a
+        className="nav-item"
+        data-testid="navbar-homepage"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-mansions"
+        href="/mansions"
+        onClick={[Function]}
+      >
+        Mansions
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-appointments"
+        href="/appointments"
+        onClick={[Function]}
+      >
+        Appointments
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-agents"
+        href="/agents"
+        onClick={[Function]}
+      >
+        Agents
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-login"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-register"
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
+    </div>
+    <div
+      className="nav-social"
+    />
+  </div>
+  <div
+    className="page"
+    data-testid="mansions"
+  >
+    <h2
+      className="page-title"
+    >
+      Mansions
+    </h2>
+    <div
+      className="listings"
+      data-testid="listings"
+    >
+      <div>
+        <a
+          href="/mansions/1"
+          onClick={[Function]}
+        >
+          <div>
+            <div
+              className="listing-image"
+              style={
+                Object {
+                  "background": "url(Mansion 1 Picture) center / cover",
+                }
+              }
+            />
+            <div
+              className="info"
+            >
+              <p
+                className="listing-important"
+              >
+                $ 
+                100,000,000
+              </p>
+              <p>
+                6 Bed Mansion
+              </p>
+              <p
+                className="listing-room"
+              >
+                <span>
+                  6
+                   
+                  Bedrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  6
+                   
+                  Bathrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  1511
+                  m
+                  <sup>
+                    2
+                  </sup>
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          className="listing-agent"
+          href="/agents/1"
+          onClick={[Function]}
+        >
+          <p>
+            <span>
+              Joshua
+            </span>
+             
+            <span>
+              Door
+            </span>
+          </p>
+          <img
+            alt="agent"
+            src="Agent Picture Link"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/mansions/2"
+          onClick={[Function]}
+        >
+          <div>
+            <div
+              className="listing-image"
+              style={
+                Object {
+                  "background": "url(Mansion 2 Picture) center / cover",
+                }
+              }
+            />
+            <div
+              className="info"
+            >
+              <p
+                className="listing-important"
+              >
+                $ 
+                26,000,000
+              </p>
+              <p>
+                Videa Casale
+              </p>
+              <p
+                className="listing-room"
+              >
+                <span>
+                  8
+                   
+                  Bedrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  11
+                   
+                  Bathrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  1031
+                  m
+                  <sup>
+                    2
+                  </sup>
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          className="listing-agent"
+          href="/agents/2"
+          onClick={[Function]}
+        >
+          <p>
+            <span>
+              Darlene (unisex name)
+            </span>
+             
+            <span>
+              Memphis
+            </span>
+          </p>
+          <img
+            alt="agent"
+            src="Agent Picture Link"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/mansions/3"
+          onClick={[Function]}
+        >
+          <div>
+            <div
+              className="listing-image"
+              style={
+                Object {
+                  "background": "url(Mansion 3 Picture) center / cover",
+                }
+              }
+            />
+            <div
+              className="info"
+            >
+              <p
+                className="listing-important"
+              >
+                $ 
+                35,000,000
+              </p>
+              <p>
+                Suganti Vapi
+              </p>
+              <p
+                className="listing-room"
+              >
+                <span>
+                  7
+                   
+                  Bedrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  12
+                   
+                  Bathrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  1325
+                  m
+                  <sup>
+                    2
+                  </sup>
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          className="listing-agent"
+          href="/agents/2"
+          onClick={[Function]}
+        >
+          <p>
+            <span>
+              Darlene (unisex name)
+            </span>
+             
+            <span>
+              Memphis
+            </span>
+          </p>
+          <img
+            alt="agent"
+            src="picture link"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/mansions/4"
+          onClick={[Function]}
+        >
+          <div>
+            <div
+              className="listing-image"
+              style={
+                Object {
+                  "background": "url(Mansion 4 Picture) center / cover",
+                }
+              }
+            />
+            <div
+              className="info"
+            >
+              <p
+                className="listing-important"
+              >
+                $ 
+                2,500,000
+              </p>
+              <p>
+                Modern Trophy Estate
+              </p>
+              <p
+                className="listing-room"
+              >
+                <span>
+                  5
+                   
+                  Bedrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  8
+                   
+                  Bathrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  735
+                  m
+                  <sup>
+                    2
+                  </sup>
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          className="listing-agent"
+          href="/agents/3"
+          onClick={[Function]}
+        >
+          <p>
+            <span>
+              Yapi
+            </span>
+             
+            <span>
+              Kobustus
+            </span>
+          </p>
+          <img
+            alt="agent"
+            src="Picture of agent"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

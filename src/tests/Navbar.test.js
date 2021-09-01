@@ -111,7 +111,7 @@ it('matches snapshot', () => {
     <Provider store={store}>
       <App>
         <BrowserRouter>
-          <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth />
+          <Navbar />
         </BrowserRouter>
       </App>
     </Provider>,

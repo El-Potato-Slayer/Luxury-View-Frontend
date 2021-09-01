@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { priceOutput } from '../helpers';
@@ -12,7 +13,7 @@ function MansionsList({ mansions }) {
     return (
       <p className="listing-room">
         {filteredRooms(mansion).map((room) => (
-          <>
+          <Fragment key={room.id}>
             <span>
               {room.amount}
               {' '}
@@ -21,7 +22,7 @@ function MansionsList({ mansions }) {
               &bull;
             </span>
           &nbsp;
-          </>
+          </Fragment>
         ))}
         <span>
           {mansion.land_area}
@@ -67,8 +68,8 @@ function MansionsList({ mansions }) {
   }
 
   return (
-    <div className="page">
-      <h2 data-testid="mansions" className="page-title">Mansions</h2>
+    <div data-testid="mansions" className="page">
+      <h2 className="page-title">Mansions</h2>
       <div data-testid="listings" className="listings">
         {mansions.map((mansion) => (
           <div key={mansion.id}>
