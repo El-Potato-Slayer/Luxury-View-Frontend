@@ -3,6 +3,7 @@ import {
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import App from '../App';
 import Navbar from '../components/Navbar';
 import ProtectedRoute from '../components/ProtectedRoute';
@@ -103,4 +104,17 @@ test('AppointmentsList renders if authorized', () => {
     </Provider>,
   );
   expect(screen.getByTestId('appointments')).toHaveTextContent('Appointments');
+});
+
+it('matches snapshot', () => {
+  const tree = renderer.create(
+    <Provider store={store}>
+      <App>
+        <BrowserRouter>
+          <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth />
+        </BrowserRouter>
+      </App>
+    </Provider>,
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
 });
