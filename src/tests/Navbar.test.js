@@ -1,5 +1,6 @@
 import {
-  cleanup, fireEvent, render, screen,
+  act,
+  cleanup, fireEvent, render, screen, waitFor,
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch } from 'react-router-dom';
@@ -93,17 +94,24 @@ test('Login component renders if unauthorized', () => {
   expect(screen.getByTestId('login')).toHaveTextContent('Login');
 });
 
-test('AppointmentsList renders if authorized', () => {
-  render(
-    <Provider store={authorizedStore}>
-      <App>
-        <BrowserRouter>
-          <ProtectedRoute path="/appointments" component={AppointmentsList} isAuth />
-        </BrowserRouter>
-      </App>
-    </Provider>,
-  );
-  expect(screen.getByTestId('appointments')).toHaveTextContent('Appointments');
+test('AppointmentsList renders if authorized', async () => {
+  act(() => {
+    render(
+      <Provider store={authorizedStore}>
+        <App>
+          <BrowserRouter>
+            <Navbar />
+          </BrowserRouter>
+        </App>
+      </Provider>,
+    );
+  });
+  act(() => {
+    fireEvent.click(screen.getByTestId('navbar-appointments'));
+  });
+  await waitFor(() => {
+    expect(screen.getByTestId('appointments')).toHaveTextContent('Appointments');
+  });
 });
 
 it('matches snapshot', () => {

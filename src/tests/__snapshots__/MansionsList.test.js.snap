@@ -106,7 +106,7 @@ exports[`matches snapshot 1`] = `
     >
       <div>
         <a
-          href="/mansions/1"
+          href="/mansions/4"
           onClick={[Function]}
         >
           <div>
@@ -114,7 +114,7 @@ exports[`matches snapshot 1`] = `
               className="listing-image"
               style={
                 Object {
-                  "background": "url(Mansion 1 Picture) center / cover",
+                  "background": "url(Mansion 4 Picture) center / cover",
                 }
               }
             />
@@ -125,108 +125,32 @@ exports[`matches snapshot 1`] = `
                 className="listing-important"
               >
                 $ 
-                100,000,000
+                2,500,000
               </p>
               <p>
-                6 Bed Mansion
+                Modern Trophy Estate
               </p>
               <p
                 className="listing-room"
               >
                 <span>
-                  6
+                  5
                    
                   Bedrooms
                    
                   •
                 </span>
                  
-                <span>
-                  6
-                   
-                  Bathrooms
-                   
-                  •
-                </span>
-                 
-                <span>
-                  1511
-                  m
-                  <sup>
-                    2
-                  </sup>
-                </span>
-              </p>
-            </div>
-          </div>
-        </a>
-        <a
-          className="listing-agent"
-          href="/agents/1"
-          onClick={[Function]}
-        >
-          <p>
-            <span>
-              Joshua
-            </span>
-             
-            <span>
-              Door
-            </span>
-          </p>
-          <img
-            alt="agent"
-            src="Agent Picture Link"
-          />
-        </a>
-      </div>
-      <div>
-        <a
-          href="/mansions/2"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="listing-image"
-              style={
-                Object {
-                  "background": "url(Mansion 2 Picture) center / cover",
-                }
-              }
-            />
-            <div
-              className="info"
-            >
-              <p
-                className="listing-important"
-              >
-                $ 
-                26,000,000
-              </p>
-              <p>
-                Videa Casale
-              </p>
-              <p
-                className="listing-room"
-              >
                 <span>
                   8
                    
-                  Bedrooms
-                   
-                  •
-                </span>
-                 
-                <span>
-                  11
-                   
                   Bathrooms
                    
                   •
                 </span>
                  
                 <span>
-                  1031
+                  735
                   m
                   <sup>
                     2
@@ -238,21 +162,21 @@ exports[`matches snapshot 1`] = `
         </a>
         <a
           className="listing-agent"
-          href="/agents/2"
+          href="/agents/3"
           onClick={[Function]}
         >
           <p>
             <span>
-              Darlene (unisex name)
+              Yapi
             </span>
              
             <span>
-              Memphis
+              Kobustus
             </span>
           </p>
           <img
             alt="agent"
-            src="Agent Picture Link"
+            src="Picture of agent"
           />
         </a>
       </div>
@@ -334,7 +258,7 @@ exports[`matches snapshot 1`] = `
       </div>
       <div>
         <a
-          href="/mansions/4"
+          href="/mansions/2"
           onClick={[Function]}
         >
           <div>
@@ -342,7 +266,7 @@ exports[`matches snapshot 1`] = `
               className="listing-image"
               style={
                 Object {
-                  "background": "url(Mansion 4 Picture) center / cover",
+                  "background": "url(Mansion 2 Picture) center / cover",
                 }
               }
             />
@@ -353,16 +277,16 @@ exports[`matches snapshot 1`] = `
                 className="listing-important"
               >
                 $ 
-                2,500,000
+                26,000,000
               </p>
               <p>
-                Modern Trophy Estate
+                Videa Casale
               </p>
               <p
                 className="listing-room"
               >
                 <span>
-                  5
+                  8
                    
                   Bedrooms
                    
@@ -370,7 +294,7 @@ exports[`matches snapshot 1`] = `
                 </span>
                  
                 <span>
-                  8
+                  11
                    
                   Bathrooms
                    
@@ -378,7 +302,7 @@ exports[`matches snapshot 1`] = `
                 </span>
                  
                 <span>
-                  735
+                  1031
                   m
                   <sup>
                     2
@@ -390,21 +314,97 @@ exports[`matches snapshot 1`] = `
         </a>
         <a
           className="listing-agent"
-          href="/agents/3"
+          href="/agents/2"
           onClick={[Function]}
         >
           <p>
             <span>
-              Yapi
+              Darlene (unisex name)
             </span>
              
             <span>
-              Kobustus
+              Memphis
             </span>
           </p>
           <img
             alt="agent"
-            src="Picture of agent"
+            src="Agent Picture Link"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/mansions/1"
+          onClick={[Function]}
+        >
+          <div>
+            <div
+              className="listing-image"
+              style={
+                Object {
+                  "background": "url(Mansion 1 Picture) center / cover",
+                }
+              }
+            />
+            <div
+              className="info"
+            >
+              <p
+                className="listing-important"
+              >
+                $ 
+                100,000,000
+              </p>
+              <p>
+                6 Bed Mansion
+              </p>
+              <p
+                className="listing-room"
+              >
+                <span>
+                  6
+                   
+                  Bedrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  6
+                   
+                  Bathrooms
+                   
+                  •
+                </span>
+                 
+                <span>
+                  1511
+                  m
+                  <sup>
+                    2
+                  </sup>
+                </span>
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          className="listing-agent"
+          href="/agents/1"
+          onClick={[Function]}
+        >
+          <p>
+            <span>
+              Joshua
+            </span>
+             
+            <span>
+              Door
+            </span>
+          </p>
+          <img
+            alt="agent"
+            src="Agent Picture Link"
           />
         </a>
       </div>

@@ -23,24 +23,38 @@ import Register from './components/Register';
 function App({ isAuth }) {
   // const [redirectedLocation, setRedirectedLocation] = useState();
   const dispatch = useDispatch();
+  // const [redirectPath, setRedirectPath] = path ? useState(path) : useState('/');
   let token;
-  useEffect(() => {
+  function redirectPath() {
+    return localStorage.getItem('redirectedLocation') ? localStorage.getItem('redirectedLocation') : '/';
+  }
+  function fetchMansions() {
     axios.get('http://localhost:3000/api/v1/properties')
       .then((resp) => {
         dispatch(setProperties(resp.data));
       });
+  }
+  function fetchAgents() {
     axios.get('http://localhost:3000/api/v1/agents')
       .then((resp) => {
         dispatch(setAgents(resp.data));
       });
+  }
+  function isAllowedToRestrictedPath() {
     token = localStorage.getItem('token');
     if (token) {
+      // setRedirectPath(localStorage.getItem('redirectedLocation'));
       const tokenExpiration = JSON.parse(atob(token.split('.')[1])).exp;
       const dateNow = new Date();
       if (tokenExpiration > dateNow.getTime() / 1000) {
         dispatch(setAuth(true));
       }
     }
+  }
+  useEffect(() => {
+    fetchMansions();
+    fetchAgents();
+    isAllowedToRestrictedPath();
   }, []);
 
   return (
@@ -58,7 +72,7 @@ function App({ isAuth }) {
             <AgentsList />
           </Route>
           <Route path="/login">
-            {isAuth ? <Redirect to={localStorage.getItem('redirectedLocation')} /> : <Login />}
+            {isAuth ? <Redirect to={redirectPath()} /> : <Login />}
           </Route>
           <Route path="/register">
             {isAuth ? <Redirect to="/" /> : <Register />}

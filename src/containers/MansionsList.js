@@ -9,6 +9,10 @@ function MansionsList({ mansions }) {
     room.name === 'Bedrooms' || room.name === 'Bathrooms'
   ));
 
+  function sortMansionByNewest(mansions) {
+    return mansions.sort((a, b) => b.id - a.id);
+  }
+
   function listRooms(mansion) {
     return (
       <p className="listing-room">
@@ -71,7 +75,7 @@ function MansionsList({ mansions }) {
     <div data-testid="mansions" className="page">
       <h2 className="page-title">Mansions</h2>
       <div data-testid="listings" className="listings">
-        {mansions.map((mansion) => (
+        {sortMansionByNewest(mansions).map((mansion) => (
           <div key={mansion.id}>
             {listMansionDetails(mansion)}
             {listAgent(mansion)}
