@@ -39,7 +39,7 @@ function Login() {
   };
 
   return (
-    <div className="form-wrapper">
+    <div className="form-wrapper" data-testid="login">
       <form className="form" onSubmit={handleSubmit}>
         {error}
         <h2 className="page-title">Login</h2>

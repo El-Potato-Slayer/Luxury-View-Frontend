@@ -40,6 +40,16 @@ test('Renders mansions component', () => {
   expect(screen.getByTestId('mansions')).toHaveTextContent('Mansions');
 });
 
+// test('Renders agents component', () => {
+//   render(
+//     <Provider store={store}>
+//       <App />
+//     </Provider>,
+//   );
+//   fireEvent.click(screen.getByTestId('navbar-agents'));
+//   expect(screen.getByTestId('agents')).toHaveTextContent('agents');
+// });
+
 it('matches snapshot', () => {
   const tree = renderer.create(
     <Provider store={store}>
