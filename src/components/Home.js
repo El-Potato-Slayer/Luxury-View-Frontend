@@ -42,7 +42,7 @@ function Home({ mansions }) {
 
       </div>
 
-      <section className="home-section">
+      <section className="home-section" data-testid="homepage-newest">
         <h4 className="home-section-title">Newest</h4>
         <div className="home-newest">
           {newestMansions.map((mansion) => (
@@ -57,7 +57,7 @@ function Home({ mansions }) {
         </div>
       </section>
 
-      <section className="home-section">
+      <section className="home-section" data-testid="homepage-soon">
         <h4 className="home-section-title">Soon to come</h4>
         <div className="home-newest">
           <div className="home-newest-item" style={{ background: 'url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/cars%2Fmercedes_benz_biome_concept_4.jpg?alt=media&token=f5a523f3-49b9-4b30-83f0-b6375c938084) center/ cover' }}>
@@ -75,14 +75,14 @@ function Home({ mansions }) {
         </div>
       </section>
 
-      <section className="home-section home-seen">
+      <section className="home-section home-seen" data-testid="homepage-seen">
         <h4>As seen in</h4>
         <div className="home-seen-grid">
           <div>
             <img src="/assets/huffpost.svg" alt="huffpost-logo" />
           </div>
           <div>
-            <img src="/assets/business-insider.svg" alt="bussiness-insider-logo" />
+            <img src="/assets/business-insider.svg" alt="business-insider-logo" />
           </div>
           <div>
             <img src="/assets/bloomberg.svg" alt="bloomberg-logo" />

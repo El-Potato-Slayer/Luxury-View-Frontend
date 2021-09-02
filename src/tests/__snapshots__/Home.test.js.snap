@@ -1,0 +1,278 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="App"
+  data-testid="app"
+>
+  <div
+    className="navbar"
+    data-testid="navbar"
+  >
+    <div
+      aria-hidden="true"
+      className="dark-filter hide"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    />
+    <div
+      className="burger"
+    >
+      <button
+        className="burger-wrapper"
+        id="burger-wrapper"
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="burger-menu"
+          id="burger-menu"
+        />
+      </button>
+    </div>
+    <img
+      alt=""
+      className="nav-logo"
+      src="/assets/logo.png"
+    />
+    <div
+      className="nav-links"
+    >
+      <a
+        className="nav-item"
+        data-testid="navbar-homepage"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-mansions"
+        href="/mansions"
+        onClick={[Function]}
+      >
+        Mansions
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-appointments"
+        href="/appointments"
+        onClick={[Function]}
+      >
+        Appointments
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-agents"
+        href="/agents"
+        onClick={[Function]}
+      >
+        Agents
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-login"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-register"
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
+    </div>
+    <div
+      className="nav-social"
+    />
+  </div>
+  <div
+    data-testid="homepage"
+  >
+    <div
+      className="homepage-header"
+    >
+      <div
+        className="carousel carousel"
+      >
+        <h2
+          className="carousel-title"
+        >
+          The World's
+          <br />
+          Luxury Marketplace
+        </h2>
+        <div
+          aria-live="polite"
+          className="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
+          onKeyDown={[Function]}
+          role="listbox"
+          style={Object {}}
+          tabIndex={0}
+        >
+          <div
+            className="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+            style={Object {}}
+          >
+            <ul
+              className="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+              onClickCapture={[Function]}
+              onMouseDown={[Function]}
+              onTouchCancel={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "transform": "translateX(NaN%) translateX(0px)",
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="carousel__dot-group dots"
+        />
+      </div>
+    </div>
+    <section
+      className="home-section"
+      data-testid="homepage-newest"
+    >
+      <h4
+        className="home-section-title"
+      >
+        Newest
+      </h4>
+      <div
+        className="home-newest"
+      />
+    </section>
+    <section
+      className="home-section"
+      data-testid="homepage-soon"
+    >
+      <h4
+        className="home-section-title"
+      >
+        Soon to come
+      </h4>
+      <div
+        className="home-newest"
+      >
+        <div
+          className="home-newest-item"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/cars%2Fmercedes_benz_biome_concept_4.jpg?alt=media&token=f5a523f3-49b9-4b30-83f0-b6375c938084) center/ cover",
+            }
+          }
+        >
+          <p
+            className="home-mansion-price"
+          >
+            Cars
+          </p>
+        </div>
+        <div
+          className="home-newest-item"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/yacht%2Fyacht.jpg?alt=media&token=19b88a2e-92a3-4f1a-9882-c5d7a8074721) center/ cover",
+            }
+          }
+        >
+          <p
+            className="home-mansion-price"
+          >
+            Yachts
+          </p>
+        </div>
+        <div
+          className="home-newest-item"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/jets%2Fjet.jpg?alt=media&token=1ca94a0c-96af-4a82-9aac-187891d92b48) center/ cover",
+            }
+          }
+        >
+          <p
+            className="home-mansion-price"
+          >
+            Jets
+          </p>
+        </div>
+        <div
+          className="home-newest-item"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/helicopters%2FHill-Helicopters-HX50-1-1536x864.jpg?alt=media&token=a9412f86-5489-4ebf-a469-e34a55820598) center/ cover",
+            }
+          }
+        >
+          <p
+            className="home-mansion-price"
+          >
+            Helicopters
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      className="home-section home-seen"
+      data-testid="homepage-seen"
+    >
+      <h4>
+        As seen in
+      </h4>
+      <div
+        className="home-seen-grid"
+      >
+        <div>
+          <img
+            alt="huffpost-logo"
+            src="/assets/huffpost.svg"
+          />
+        </div>
+        <div>
+          <img
+            alt="business-insider-logo"
+            src="/assets/business-insider.svg"
+          />
+        </div>
+        <div>
+          <img
+            alt="bloomberg-logo"
+            src="/assets/bloomberg.svg"
+          />
+        </div>
+        <div>
+          <img
+            alt="cnbc-logo"
+            src="/assets/cnbc.svg"
+          />
+        </div>
+        <div>
+          <img
+            alt="bbc-logo"
+            src="/assets/bbc.svg"
+          />
+        </div>
+        <div>
+          <img
+            alt="financial-times-logo"
+            src="/assets/financial-times.svg"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
