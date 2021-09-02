@@ -33,8 +33,8 @@ function AgentsList({ agents }) {
   }
 
   return (
-    <div className="page">
-      <h2 data-testid="agents" className="page-title">Agents</h2>
+    <div data-testid="agents" className="page">
+      <h2 className="page-title">Agents</h2>
       <div data-testid="agents-listing" className="listings">
         {agents.map((agent) => (
           <Link key={agent.id} to={`agents/${agent.id}`}>
