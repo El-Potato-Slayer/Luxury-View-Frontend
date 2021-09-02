@@ -44,10 +44,10 @@ function Login() {
         {error}
         <h2 className="page-title">Login</h2>
         <fieldset>
-          <input className="input-field" type="text" name="username" placeholder="username" onChange={inputHandler} />
+          <input className="input-field" type="text" name="username" placeholder="Username" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input className="input-field" type="password" name="password" placeholder="password" onChange={inputHandler} />
+          <input className="input-field" type="password" name="password" placeholder="Password" onChange={inputHandler} />
         </fieldset>
         <button className="info-button" type="submit">Submit</button>
       </form>
