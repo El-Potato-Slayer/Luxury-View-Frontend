@@ -2,16 +2,12 @@ import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { priceOutput } from '../helpers';
+import { priceOutput, sortMansionByNewest } from '../helpers';
 
 function MansionsList({ mansions }) {
   const filteredRooms = (mansion) => mansion.rooms.filter((room) => (
     room.name === 'Bedrooms' || room.name === 'Bathrooms'
   ));
-
-  function sortMansionByNewest(mansions) {
-    return mansions.sort((a, b) => b.id - a.id);
-  }
 
   function listRooms(mansion) {
     return (
