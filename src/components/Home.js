@@ -6,14 +6,14 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getRandomElements, priceOutput } from '../helpers';
+import { getRandomElements, priceOutput, sortMansionByNewest } from '../helpers';
 
 function Home({ mansions }) {
   const [randomMansions, setRandomMansions] = useState([]);
   const [newestMansions, setNewestMansions] = useState([]);
 
   useEffect(() => {
-    setNewestMansions(mansions.slice(mansions.length - 4));
+    setNewestMansions(sortMansionByNewest(mansions).slice(mansions.length - 4));
     setRandomMansions(getRandomElements(mansions, 3));
   }, [mansions]);
 
