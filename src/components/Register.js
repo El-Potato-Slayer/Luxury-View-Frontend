@@ -43,7 +43,7 @@ function Register() {
   };
 
   return (
-    <div className="form-wrapper">
+    <div data-testid="register" className="form-wrapper">
       {displayError(error)}
       <form className="form">
         <h2 className="page-title">Register</h2>
