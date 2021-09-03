@@ -1,5 +1,5 @@
 # Luxury View Backend
-This is the frontend of the Luxury View Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create an appointment to view a specific mansion and view them within the appointments page.
+This is the frontend of the Luxury View Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create an appointment to view a specific mansion and view them within the appointments page. The backend can be found [here](https://github.com/El-Potato-Slayer/Luxury-View-Backend)
 
 ![image](https://user-images.githubusercontent.com/43865875/132005517-710bde91-d240-4d08-aee7-a2bc0229e580.png)
 
