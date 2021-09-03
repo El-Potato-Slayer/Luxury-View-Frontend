@@ -1,37 +1,47 @@
-.text-success{
+.text-success {
   color: $success;
 }
-.text-info{
+
+.text-info {
   color: $info;
 }
-.text-warning{
+
+.text-warning {
   color: $warning;
 }
-.text-error{
+
+.text-error {
   color: $error;
 }
-.text-white{
-  color: $white
-}
-.text-black{
-  color: $black
+
+.text-white {
+  color: $white;
 }
 
-.bg-success{
+.text-black {
+  color: $black;
+}
+
+.bg-success {
   background-color: $success;
 }
-.bg-info{
+
+.bg-info {
   background-color: $info;
 }
-.bg-warning{
+
+.bg-warning {
   background-color: $warning;
 }
-.bg-error{
+
+.bg-error {
   background-color: $error;
 }
-.bg-white{
+
+.bg-white {
   background-color: $white;
 }
-.bg-black{
+
+.bg-black {
   background-color: $black;
 }

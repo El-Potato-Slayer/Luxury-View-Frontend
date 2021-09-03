@@ -1,4 +1,4 @@
-.mansion-header{
+.mansion-header {
   display: grid;
 }
 
@@ -6,20 +6,20 @@
   display: grid;
 }
 
-.mansion-title{
+.mansion-title {
   text-align: center;
   font-weight: 500;
   margin: 1rem 0;
 }
 
-.room-features{
+.room-features {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
 }
 
-.room-features:nth-of-type(odd){
+.room-features:nth-of-type(odd) {
   background: $light-gray;
 }
 
@@ -45,17 +45,16 @@
 
     & > :last-child {
       border-bottom: 1px $light-gray solid;
-
     }
   }
 }
 
-.mansion-agent-details{
+.mansion-agent-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  img{
+  img {
     width: 3rem;
     height: 100%;
     object-fit: cover;
@@ -69,7 +68,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .mansion-header{
+  .mansion-header {
     grid-template-columns: 2fr 1fr;
 
     .mansion-title {
@@ -83,8 +82,8 @@
     align-items: center;
   }
 
-  .mansion-agent{
-    .contact{
+  .mansion-agent {
+    .contact {
       margin: 0;
     }
   }

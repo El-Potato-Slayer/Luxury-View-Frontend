@@ -25,7 +25,7 @@
 
 .burger-menu,
 .burger-menu::before,
-.burger-menu::after{
+.burger-menu::after {
   content: "";
   width: 1.75rem;
   height: 0.125rem;
@@ -34,37 +34,37 @@
   margin: 0 auto;
 }
 
-.burger-menu{
+.burger-menu {
   transform: translateY(-50%);
 }
 
-.burger-menu::before{
+.burger-menu::before {
   position: absolute;
   left: 0;
   top: -0.625rem;
   transform: translateY(50%);
 }
 
-.burger-menu::after{
+.burger-menu::after {
   position: absolute;
   left: 0;
   top: 0.625rem;
   transform: translateY(-50%);
 }
 
-.burger-menu.open{
+.burger-menu.open {
   left: -50%;
   background: transparent;
 }
 
-.burger-menu.open::before{
+.burger-menu.open::before {
   left: 0;
   top: 50%;
   width: 100%;
   transform: rotate(45deg);
 }
 
-.burger-menu.open::after{
+.burger-menu.open::after {
   left: 0;
   top: 50%;
   width: 100%;

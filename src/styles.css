@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -49,65 +49,67 @@ fieldset {
   .page {
     margin: 0 2.75rem 4rem;
   }
+
   .page-margin {
     margin: 0 2.75rem 4rem;
   }
+
   .image-margin {
     margin: 0 2.75rem 4rem;
   }
 }
 
 .text-success {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .text-info {
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .text-warning {
-  color: #FF9800;
+  color: #ff9800;
 }
 
 .text-error {
-  color: #F44336;
+  color: #f44336;
 }
 
 .text-white {
-  color: #ffffff;
+  color: #fff;
 }
 
 .text-black {
-  color: #000000;
+  color: #000;
 }
 
 .bg-success {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .bg-info {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 .bg-warning {
-  background-color: #FF9800;
+  background-color: #ff9800;
 }
 
 .bg-error {
-  background-color: #F44336;
+  background-color: #f44336;
 }
 
 .bg-white {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .bg-black {
-  background-color: #000000;
+  background-color: #000;
 }
 
 .info-button {
-  background: #2196F3;
-  color: #ffffff;
+  background: #2196f3;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
@@ -115,8 +117,8 @@ fieldset {
 }
 
 .success-button {
-  background: #4CAF50;
-  color: #ffffff;
+  background: #4caf50;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
@@ -125,8 +127,8 @@ fieldset {
 }
 
 .warning-button {
-  background: #FF9800;
-  color: #ffffff;
+  background: #ff9800;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
@@ -134,8 +136,8 @@ fieldset {
 }
 
 .error-button {
-  background: #F44336;
-  color: #ffffff;
+  background: #f44336;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
@@ -151,21 +153,20 @@ fieldset {
 
 .form {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 0.75rem;
-  padding: 1rem 0rem;
+  padding: 1rem 0;
   width: 80%;
   max-width: 20rem;
 }
@@ -190,7 +191,7 @@ fieldset {
 
 .input-field:focus {
   outline: none;
-  border-bottom: 1px solid #2196F3;
+  border-bottom: 1px solid #2196f3;
 }
 
 .carousel {
@@ -202,7 +203,7 @@ fieldset {
   z-index: 2;
   left: 1.25rem;
   bottom: 6rem;
-  color: #ffffff;
+  color: #fff;
   font-weight: 400;
   font-size: 1.25rem;
 }
@@ -230,7 +231,7 @@ fieldset {
   bottom: 2rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .carousel__dot {
@@ -249,9 +250,11 @@ fieldset {
   .carousel-title {
     font-size: 4.25rem;
   }
+
   .slider {
     min-height: 37.5rem;
   }
+
   .slide {
     min-height: 37.5rem;
   }
@@ -260,6 +263,83 @@ fieldset {
 @media only screen and (min-width: 1024px) {
   .carousel-title {
     left: 2.75rem;
+  }
+}
+
+.appointments-form {
+  text-align: center;
+}
+
+.appointments-form .sub-title {
+  font-weight: 500;
+}
+
+.appointments-form > * {
+  margin: 2rem 0;
+}
+
+.appointments-form > :last-child {
+  margin: 0;
+}
+
+.date-input {
+  border: none;
+}
+
+.react-datepicker-popper {
+  left: 50% !important;
+  top: 50% !important;
+  -webkit-transform: translate(-75%, 0%) !important;
+  transform: translate(-75%, 0%) !important;
+}
+
+.appointment-info {
+  display: -ms-grid;
+  display: grid;
+}
+
+.appointment-info > :nth-child(2) {
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.appointment-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.appointment-pic {
+  max-height: 80vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+  .appointment-info {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .appointment-info > :first-child {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .appointment-title {
+    font-size: 2.75rem;
+  }
+
+  .appointment-agent {
+    margin: 0;
   }
 }
 
@@ -292,14 +372,13 @@ fieldset {
 
 .listing-agent {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-top: 1px #e0e0e0 solid;
 }
 
@@ -312,45 +391,44 @@ fieldset {
   width: 3rem;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 50%;
 }
 
 @media only screen and (min-width: 768px) {
   .listings {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .listings {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .user-buttons {
   margin: 1rem 0;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .user-buttons > a {
-  background: #2196F3;
-  color: #ffffff;
+  background: #2196f3;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.4em;
   font-size: 1rem;
 }
 
 .user-buttons > button {
-  background-color: #F44336;
-  color: #ffffff;
+  background-color: #f44336;
+  color: #fff;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.4em;
@@ -375,14 +453,13 @@ fieldset {
 
 .room-features {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0.5rem 1rem;
 }
 
@@ -396,18 +473,17 @@ fieldset {
 
 .mansion-agent .contact {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin: 2rem 0;
 }
 
 .mansion-agent .contact > * {
   padding: 1rem 0;
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .mansion-agent .contact > :first-child {
@@ -421,21 +497,20 @@ fieldset {
 
 .mansion-agent-details {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mansion-agent-details img {
   width: 3rem;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -448,103 +523,32 @@ fieldset {
 @media only screen and (min-width: 768px) {
   .mansion-header {
     -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
+
   .mansion-header .mansion-title {
     text-align: end;
   }
+
   .mansion-details {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .mansion-agent .contact {
     margin: 0;
   }
+
   .mansion-description {
     margin: 2rem 0;
     padding-right: 2rem;
     max-width: 70ch;
   }
-}
-
-.appointment-info {
-  display: -ms-grid;
-  display: grid;
-}
-
-.appointment-info > :nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.appointment-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.appointment-pic {
-  max-height: 80vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media only screen and (min-width: 1024px) {
-  .appointment-info {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-  .appointment-info > :first-child {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-  .appointment-title {
-    font-size: 2.75rem;
-  }
-  .appointment-agent {
-    margin: 0;
-  }
-}
-
-.appointments-form {
-  text-align: center;
-}
-
-.appointments-form .sub-title {
-  font-weight: 500;
-}
-
-.appointments-form > * {
-  margin: 2rem 0;
-}
-
-.appointments-form > :last-child {
-  margin: 0;
-}
-
-.date-input {
-  border: none;
-}
-
-.react-datepicker-popper {
-  left: 50% !important;
-  top: 50% !important;
-  -webkit-transform: translate(-75%, 0%) !important;
-          transform: translate(-75%, 0%) !important;
 }
 
 .home-section {
@@ -566,16 +570,17 @@ fieldset {
 
 .home-newest-item {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  aspect-ratio: 5.6/2.7;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  /* stylelint-disable */
+  aspect-ratio: 5.6 / 2.7;
+  /* stylelint-enable */
   padding: 1rem 1.25rem;
   position: relative;
 }
@@ -597,7 +602,7 @@ fieldset {
 
 .home-mansion-price {
   position: relative;
-  color: #ffffff;
+  color: #fff;
   z-index: 1;
   margin-bottom: 0.5rem;
 }
@@ -627,7 +632,7 @@ fieldset {
   display: grid;
   place-items: center;
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 1rem 0;
 }
@@ -635,11 +640,12 @@ fieldset {
 @media only screen and (min-width: 768px) {
   .home-newest {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
+
   .home-seen-grid {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -647,13 +653,16 @@ fieldset {
   .home-section {
     margin: 0 2.75rem;
   }
+
   .home-newest {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  /* stylelint-disable */
   .home-newest-item {
-    aspect-ratio: 2.75/3.6;
+    aspect-ratio: 2.75 / 3.6;
   }
+  /* stylelint-enable */
   .home-seen {
     margin: 5rem 0;
   }
@@ -663,7 +672,7 @@ fieldset {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 2.75fr;
-      grid-template-rows: 1fr 2.75fr;
+  grid-template-rows: 1fr 2.75fr;
   position: fixed;
   top: 0;
   left: -14rem;
@@ -671,7 +680,7 @@ fieldset {
   height: 100%;
   padding-left: 1rem;
   z-index: 3;
-  background: #ffffff;
+  background: #fff;
   border-right: 1px solid #e0e0e0;
   -webkit-transition: all 0.75s ease-in-out;
   transition: all 0.75s ease-in-out;
@@ -702,12 +711,11 @@ fieldset {
 
 .nav-links {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -717,8 +725,8 @@ fieldset {
 }
 
 .nav-item:hover {
-  background-color: #98BE11;
-  color: #ffffff;
+  background-color: #98be11;
+  color: #fff;
 }
 
 .burger {
@@ -761,7 +769,7 @@ fieldset {
 
 .burger-menu {
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .burger-menu::before {
@@ -769,7 +777,7 @@ fieldset {
   left: 0;
   top: -0.625rem;
   -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+  transform: translateY(50%);
 }
 
 .burger-menu::after {
@@ -777,7 +785,7 @@ fieldset {
   left: 0;
   top: 0.625rem;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .burger-menu.open {
@@ -790,7 +798,7 @@ fieldset {
   top: 50%;
   width: 100%;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .burger-menu.open::after {
@@ -798,16 +806,15 @@ fieldset {
   top: 50%;
   width: 100%;
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .agent-picture-wrapper {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 4rem 0;
 }
 
@@ -830,7 +837,7 @@ fieldset {
   width: 15rem;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 1/1;
 }
 

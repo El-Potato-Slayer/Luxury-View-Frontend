@@ -1,25 +1,25 @@
-*, 
-*::before, 
+*,
+*::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Poppins', sans-serif;
 }
 
-img{
+img {
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
@@ -61,11 +61,11 @@ fieldset {
 @import './styles/notifications';
 @import './styles/components';
 @import './styles/carousel';
+@import './styles/AppointmentsForm';
+@import './styles/Appointment';
 @import './styles/Listings';
 @import './styles/AppointmentsList';
 @import './styles/Mansion';
-@import './styles/Appointment';
-@import './styles/AppointmentsForm';
 @import './styles/Home';
 @import './styles/Navbar';
 @import './styles/hambuger-menu';

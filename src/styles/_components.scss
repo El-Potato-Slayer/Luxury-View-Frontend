@@ -1,4 +1,4 @@
-.info-button{
+.info-button {
   background: $info;
   color: $white;
   padding: 0.5rem 1rem;
@@ -7,7 +7,7 @@
   border: none;
 }
 
-.success-button{
+.success-button {
   background: $success;
   color: $white;
   padding: 0.5rem 1rem;
@@ -16,7 +16,8 @@
   display: block;
   border: none;
 }
-.warning-button{
+
+.warning-button {
   background: $warning;
   color: $white;
   padding: 0.5rem 1rem;
@@ -24,7 +25,8 @@
   font-size: 1rem;
   border: none;
 }
-.error-button{
+
+.error-button {
   background: $error;
   color: $white;
   padding: 0.5rem 1rem;
@@ -46,28 +48,29 @@
   align-items: center;
   border: 1px solid $light-gray;
   border-radius: 0.75rem;
-  padding: 1rem 0rem;
+  padding: 1rem 0;
   width: 80%;
   max-width: 20rem;
+
   & > * {
     margin: 1rem 0;
   }
 
-  fieldset{
+  fieldset {
     display: grid;
     place-items: center;
     width: 100%;
   }
 }
 
-.input-field{
+.input-field {
   border: none;
   padding: 0.5rem;
   border-bottom: 1px solid black;
   min-width: 80%;
 }
 
-.input-field:focus{
+.input-field:focus {
   outline: none;
   border-bottom: 1px solid $info;
 }
