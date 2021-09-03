@@ -13,7 +13,7 @@ function Home({ mansions }) {
   const [newestMansions, setNewestMansions] = useState([]);
 
   useEffect(() => {
-    setNewestMansions(sortMansionByNewest(mansions).slice(mansions.length - 4));
+    setNewestMansions(sortMansionByNewest(mansions).slice(0, 4));
     setRandomMansions(getRandomElements(mansions, 3));
   }, [mansions]);
 

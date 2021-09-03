@@ -29,13 +29,13 @@ function App({ isAuth }) {
     return localStorage.getItem('redirectedLocation') ? localStorage.getItem('redirectedLocation') : '/';
   }
   function fetchMansions() {
-    axios.get('http://localhost:3000/api/v1/properties')
+    axios.get('properties')
       .then((resp) => {
         dispatch(setProperties(resp.data));
       });
   }
   function fetchAgents() {
-    axios.get('http://localhost:3000/api/v1/agents')
+    axios.get('agents')
       .then((resp) => {
         dispatch(setAgents(resp.data));
       });
