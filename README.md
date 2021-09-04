@@ -18,7 +18,7 @@ This is the frontend of the Luxury View Application. Users are able to register,
 1. Open Terminal.
 2. Navigate to your desired location to download the contents of this repository.
 3. Run `git clone https://github.com/El-Potato-Slayer/Luxury-View-Frontend.git`.
-4. Run `cd luxury-view-front`.
+4. Run `cd luxury-view-frontend`.
 5. Run `npm install`
 8. Run `yarn start` or `npm start`
 9. Open `http://localhost:3000/` within your browser
@@ -40,7 +40,7 @@ This is the frontend of the Luxury View Application. Users are able to register,
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/El-Potato-Slayer/bookstore/issues).
+Feel free to check the [issues page](https://github.com/El-Potato-Slayer/Luxury-View-Frontend/issues).
 
 
 ## Show your support
