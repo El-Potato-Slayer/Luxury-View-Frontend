@@ -12,6 +12,7 @@ import AppointmentsList from '../containers/AppointmentsList';
 import store from '../mocks/store/configureStore';
 import authorizedStore from '../mocks/authstore/configureStore';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Checks if "Home" link contains the text "Home"', () => {

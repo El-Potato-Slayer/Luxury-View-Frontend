@@ -12,18 +12,19 @@ function AppointmentsList({ appointments }) {
   const [deleteError, setDeleteError] = useState();
   const [fetchError, setFetchError] = useState();
   function fetchAppointments() {
-    axios.get('appointments', {
-      headers: {
-        Authorization: `token ${localStorage.getItem('token')}`,
-      },
-    })
-      .then((res) => {
-        dispatch(setAppointments(res.data));
-        setCurrentAppointments(res.data);
+    try {
+      axios.get('appointments', {
+        headers: {
+          Authorization: `token ${localStorage.getItem('token')}`,
+        },
       })
-      .catch(() => {
-        setFetchError('Appointments could not be fetched. Please try again later');
-      });
+        .then((res) => {
+          dispatch(setAppointments(res.data));
+          setCurrentAppointments(res.data);
+        });
+    } catch {
+      setFetchError('Appointments could not be fetched. Please try again later');
+    }
   }
 
   const deleteAppointment = (id) => {

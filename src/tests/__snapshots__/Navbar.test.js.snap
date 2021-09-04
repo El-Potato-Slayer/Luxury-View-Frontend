@@ -91,6 +91,12 @@ exports[`matches snapshot 1`] = `
       className="nav-social"
     />
   </div>
+  <p>
+    Mansions could not be fetched. Please try again later
+  </p>
+  <p>
+    Mansions could not be fetched. Please try again later
+  </p>
   <div
     className="form-wrapper"
     data-testid="login"
