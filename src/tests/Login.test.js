@@ -10,6 +10,7 @@ import store from '../mocks/store/configureStore';
 import App from '../App';
 import Login from '../components/Login';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the Register component without crashing', () => {
