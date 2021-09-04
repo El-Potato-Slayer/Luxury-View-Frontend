@@ -10,6 +10,7 @@ import MansionsList from '../containers/MansionsList';
 import store from '../mocks/store/configureStore';
 import App from '../App';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the MansionsList component without crashing', () => {
