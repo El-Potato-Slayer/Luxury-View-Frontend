@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import AgentsList from '../containers/AgentsList';
 import store from '../mocks/store/configureStore';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the AgentsList component without crashing', () => {
