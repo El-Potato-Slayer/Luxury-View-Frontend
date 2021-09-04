@@ -5,12 +5,12 @@ import {
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import renderer from 'react-test-renderer';
+import authorizedStore from '../mocks/authStore/configureStore';
 import App from '../App';
 import Navbar from '../components/Navbar';
 import ProtectedRoute from '../components/ProtectedRoute';
 import AppointmentsList from '../containers/AppointmentsList';
 import store from '../mocks/store/configureStore';
-import authorizedStore from '../mocks/authstore/configureStore';
 
 jest.mock('axios');
 afterEach(cleanup);
