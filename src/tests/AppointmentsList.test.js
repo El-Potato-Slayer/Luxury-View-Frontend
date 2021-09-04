@@ -10,6 +10,7 @@ import AppointmentsList from '../containers/AppointmentsList';
 import ProtectedRoute from '../components/ProtectedRoute';
 import App from '../App';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the AppointmentsList component without crashing', () => {
