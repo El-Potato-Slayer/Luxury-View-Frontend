@@ -1,5 +1,6 @@
 import {
-  cleanup, render, screen,
+  act,
+  cleanup, fireEvent, render, screen, waitFor,
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
@@ -9,7 +10,9 @@ import { Provider } from 'react-redux';
 import store from '../mocks/store/configureStore';
 import App from '../App';
 import Register from '../components/Register';
+import Navbar from '../components/Navbar';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the Register component without crashing', () => {
@@ -25,15 +28,25 @@ test('Renders the Register component without crashing', () => {
   );
 });
 
-test('Checks that title is rendered', () => {
-  render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <Register />
-      </BrowserRouter>
-    </Provider>,
-  );
-  expect(screen.getByTestId('register')).toHaveTextContent('Register');
+test('Checks that title is rendered', async () => {
+  act(() => {
+    render(
+      <Provider store={store}>
+        <App>
+          <BrowserRouter>
+            <Navbar />
+          </BrowserRouter>
+        </App>
+      </Provider>,
+    );
+  });
+  act(() => {
+    fireEvent.click(screen.getByTestId('navbar-register'));
+  });
+
+  await waitFor(() => {
+    expect(screen.getByTestId('register')).toHaveTextContent('Register');
+  });
 });
 
 test('Checks that unknown title is not rendered', () => {

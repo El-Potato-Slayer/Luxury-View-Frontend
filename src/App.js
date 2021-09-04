@@ -3,7 +3,7 @@ import {
   BrowserRouter, Redirect, Route, Switch,
 } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Navbar from './components/Navbar';
@@ -21,24 +21,41 @@ import Appointment from './components/Appointment';
 import Register from './components/Register';
 
 function App({ isAuth }) {
-  // const [redirectedLocation, setRedirectedLocation] = useState();
   const dispatch = useDispatch();
-  // const [redirectPath, setRedirectPath] = path ? useState(path) : useState('/');
+  const [mansionsError, setMansionsError] = useState();
+  const [agentsError, setAgentsError] = useState();
   let token;
   function redirectPath() {
     return localStorage.getItem('redirectedLocation') ? localStorage.getItem('redirectedLocation') : '/';
   }
   function fetchMansions() {
-    axios.get('properties')
-      .then((resp) => {
-        dispatch(setProperties(resp.data));
-      });
+    try {
+      axios.get('properties')
+        .then((resp) => {
+          dispatch(setProperties(resp.data));
+          return resp.data;
+        });
+    } catch {
+      setMansionsError('Mansions could not be fetched. Please try again later');
+    }
   }
   function fetchAgents() {
-    axios.get('agents')
-      .then((resp) => {
-        dispatch(setAgents(resp.data));
-      });
+    try {
+      axios.get('agents')
+        .then((resp) => {
+          dispatch(setAgents(resp.data));
+        });
+    } catch {
+      setAgentsError('Agents could not be fetched. Please try again later');
+    }
+  }
+  function displayError(error) {
+    if (error) {
+      return (
+        <p>{mansionsError}</p>
+      );
+    }
+    return null;
   }
   function isAllowedToRestrictedPath() {
     token = localStorage.getItem('token');
@@ -61,6 +78,8 @@ function App({ isAuth }) {
     <div data-testid="app" className="App">
       <BrowserRouter>
         <Navbar />
+        {displayError(mansionsError)}
+        {displayError(agentsError)}
         <Switch>
           <Route exact path="/">
             <Home />
