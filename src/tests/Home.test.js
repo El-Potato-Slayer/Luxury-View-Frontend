@@ -10,6 +10,7 @@ import Home from '../components/Home';
 import store from '../mocks/store/configureStore';
 import App from '../App';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 test('Renders the Home component without crashing', () => {
