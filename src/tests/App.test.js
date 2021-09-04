@@ -9,6 +9,7 @@ import '@testing-library/jest-dom';
 import store from '../mocks/store/configureStore';
 // import store from './store/configureStore';
 
+jest.mock('axios');
 afterEach(cleanup);
 
 it('Renders App component without crashing', () => {
