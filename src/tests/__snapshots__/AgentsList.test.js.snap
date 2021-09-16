@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="page"
+  data-testid="agents"
+>
+  <h2
+    className="page-title"
+  >
+    Agents
+  </h2>
+  <div
+    className="listings"
+    data-testid="agents-listing"
+  >
+    <a
+      href="/agents/1"
+      onClick={[Function]}
+    >
+      <div>
+        <div
+          className="listing-image"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/agents%2FP7JIqIE.png?alt=media&token=bfa90cd0-07e5-4b99-b15e-f678570049bd) center / cover",
+            }
+          }
+        />
+        <div
+          className="info"
+        >
+          <p
+            className="listing-important"
+          >
+            Joshua
+             
+            Door
+          </p>
+          <p>
+            Number:
+             
+            0987634391
+          </p>
+          <p>
+            Email:
+             
+            joshuadoor@gmail.com
+          </p>
+        </div>
+      </div>
+    </a>
+    <a
+      href="/agents/2"
+      onClick={[Function]}
+    >
+      <div>
+        <div
+          className="listing-image"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/agents%2FEmbarrased_Man.jpg?alt=media&token=7168439b-a738-4122-96af-fba1dc158a9a) center / cover",
+            }
+          }
+        />
+        <div
+          className="info"
+        >
+          <p
+            className="listing-important"
+          >
+            Darlene (unisex name)
+             
+            Memphis
+          </p>
+          <p>
+            Number:
+             
+            0987431489
+          </p>
+          <p>
+            Email:
+             
+            darthememphis@gmail.com
+          </p>
+        </div>
+      </div>
+    </a>
+    <a
+      href="/agents/3"
+      onClick={[Function]}
+    >
+      <div>
+        <div
+          className="listing-image"
+          style={
+            Object {
+              "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/agents%2Fsalesman.jpg?alt=media&token=0ec04d27-2070-4673-a6d0-bc0eb34cb10b) center / cover",
+            }
+          }
+        />
+        <div
+          className="info"
+        >
+          <p
+            className="listing-important"
+          >
+            Yapi
+             
+            Kobustus
+          </p>
+          <p>
+            Number:
+             
+            0874521321
+          </p>
+          <p>
+            Email:
+             
+            yapikobus@gmail.com
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+`;

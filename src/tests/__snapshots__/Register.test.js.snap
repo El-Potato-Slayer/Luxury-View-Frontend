@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="form-wrapper"
+  data-testid="register"
+>
+  <form
+    className="form"
+  >
+    <h2
+      className="page-title"
+    >
+      Register
+    </h2>
+    <fieldset>
+      <input
+        className="input-field"
+        name="first_name"
+        onChange={[Function]}
+        placeholder="First Name"
+        type="text"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        className="input-field"
+        name="last_name"
+        onChange={[Function]}
+        placeholder="Last Name"
+        type="text"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        className="input-field"
+        name="username"
+        onChange={[Function]}
+        placeholder="Username"
+        type="text"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        className="input-field"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        className="input-field"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="text"
+      />
+    </fieldset>
+    <button
+      className="info-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="App"
+  data-testid="app"
+>
+  <div
+    className="navbar"
+    data-testid="navbar"
+  >
+    <div
+      aria-hidden="true"
+      className="dark-filter hide"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    />
+    <div
+      className="burger"
+    >
+      <button
+        className="burger-wrapper"
+        id="burger-wrapper"
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="burger-menu"
+          id="burger-menu"
+        />
+      </button>
+    </div>
+    <img
+      alt=""
+      className="nav-logo"
+      src="/assets/logo.png"
+    />
+    <div
+      className="nav-links"
+    >
+      <a
+        className="nav-item"
+        data-testid="navbar-homepage"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-mansions"
+        href="/mansions"
+        onClick={[Function]}
+      >
+        Mansions
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-appointments"
+        href="/appointments"
+        onClick={[Function]}
+      >
+        Appointments
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-agents"
+        href="/agents"
+        onClick={[Function]}
+      >
+        Agents
+      </a>
+      <a
+        className="nav-item"
+        data-testid="navbar-logout"
+        href="/"
+        onClick={[Function]}
+      >
+        Logout
+      </a>
+    </div>
+    <div
+      className="nav-social"
+    />
+  </div>
+  <div
+    className="page"
+  >
+    <h1
+      className="page-title"
+      data-testid="appointments"
+    >
+      Appointments
+    </h1>
+    <div
+      className="listings"
+    >
+      <div
+        className="appointment-card"
+      >
+        <div>
+          <div
+            className="listing-image"
+            style={
+              Object {
+                "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/mansions%2Fmansion3.jpg?alt=media&token=f86b9aac-574c-44f7-b9a8-67fcc19e04ac) center / cover",
+              }
+            }
+          />
+          <div
+            className="info"
+          >
+            <p
+              className="listing-important"
+            >
+              Date: Wed Aug 25 2021 00:48
+            </p>
+            <p>
+              Property:
+               
+              <a
+                className="text-info"
+                href="/mansions/3"
+                onClick={[Function]}
+              >
+                Suganti Vapi
+              </a>
+            </p>
+          </div>
+          <div
+            className="user-buttons"
+          >
+            <a
+              href="/appointments/1"
+              onClick={[Function]}
+            >
+              Appointment Details
+            </a>
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="appointment-card"
+      >
+        <div>
+          <div
+            className="listing-image"
+            style={
+              Object {
+                "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/mansions%2Fmansion1.jpg?alt=media&token=af39a749-6fed-41f5-8ed5-d7e0fac7956c) center / cover",
+              }
+            }
+          />
+          <div
+            className="info"
+          >
+            <p
+              className="listing-important"
+            >
+              Date: Wed Sep 01 2021 14:00
+            </p>
+            <p>
+              Property:
+               
+              <a
+                className="text-info"
+                href="/mansions/1"
+                onClick={[Function]}
+              >
+                6 Bed Mansion
+              </a>
+            </p>
+          </div>
+          <div
+            className="user-buttons"
+          >
+            <a
+              href="/appointments/2"
+              onClick={[Function]}
+            >
+              Appointment Details
+            </a>
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="appointment-card"
+      >
+        <div>
+          <div
+            className="listing-image"
+            style={
+              Object {
+                "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/mansions%2Fmansion4.jpg?alt=media&token=b350a3e3-2b06-499f-9ae3-05666c36e67c) center / cover",
+              }
+            }
+          />
+          <div
+            className="info"
+          >
+            <p
+              className="listing-important"
+            >
+              Date: Wed Sep 01 2021 10:00
+            </p>
+            <p>
+              Property:
+               
+              <a
+                className="text-info"
+                href="/mansions/4"
+                onClick={[Function]}
+              >
+                Modern Trophy Estate
+              </a>
+            </p>
+          </div>
+          <div
+            className="user-buttons"
+          >
+            <a
+              href="/appointments/3"
+              onClick={[Function]}
+            >
+              Appointment Details
+            </a>
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="appointment-card"
+      >
+        <div>
+          <div
+            className="listing-image"
+            style={
+              Object {
+                "background": "url(https://firebasestorage.googleapis.com/v0/b/tactus-caelesti.appspot.com/o/mansions%2Fmansion2.jpg?alt=media&token=cbce1309-7a4c-48c6-b4c3-06c733ce7500) center / cover",
+              }
+            }
+          />
+          <div
+            className="info"
+          >
+            <p
+              className="listing-important"
+            >
+              Date: Wed Sep 15 2021 14:30
+            </p>
+            <p>
+              Property:
+               
+              <a
+                className="text-info"
+                href="/mansions/2"
+                onClick={[Function]}
+              >
+                Videa Casale
+              </a>
+            </p>
+          </div>
+          <div
+            className="user-buttons"
+          >
+            <a
+              href="/appointments/4"
+              onClick={[Function]}
+            >
+              Appointment Details
+            </a>
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
