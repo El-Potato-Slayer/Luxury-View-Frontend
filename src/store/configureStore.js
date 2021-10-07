@@ -6,11 +6,15 @@ import { fetchAppointmentsFailure, fetchAppointmentsRequest, fetchAppointmentsSu
 import { fetchPropertiesFailure, fetchPropertiesRequest, fetchPropertiesSuccess } from './actions/propertyActions';
 import rootReducer from './reducers';
 
+const authToken = localStorage.getItem('token');
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
-// store.subscribe(() => { console.log(store.getState()); });
+// Fetch data on app init
 store.dispatch(fetchData('properties', fetchPropertiesRequest, fetchPropertiesSuccess, fetchPropertiesFailure));
 store.dispatch(fetchData('agents', fetchAgentsRequest, fetchAgentsSuccess, fetchAgentsFailure));
-store.dispatch(fetchData('appointments', fetchAppointmentsRequest, fetchAppointmentsSuccess, fetchAppointmentsFailure, true));
+// Fetch appointments if auth token exists
+if (authToken) {
+  store.dispatch(fetchData('appointments', fetchAppointmentsRequest, fetchAppointmentsSuccess, fetchAppointmentsFailure, true));
+}
 
 export default store;
