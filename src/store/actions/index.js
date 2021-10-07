@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-export const setAgents = (payload) => ({
-  type: 'SET_AGENTS',
-  payload,
-});
-
 export const setAppointments = (payload) => ({
   type: 'SET_APPOINTMENTS',
   payload,
@@ -20,15 +15,30 @@ export const setUser = (payload) => ({
   payload,
 });
 
-export const fetchData = (endpoint, request, success, failure) => function (dispatch) {
+export const fetchData = (endpoint, request, success, failure,
+  authHeader = false) => (dispatch) => {
   dispatch(request());
-  axios.get(`https://boiling-tundra-41512.herokuapp.com/api/v1/${endpoint}`)
-    .then((res) => {
-      dispatch(success(res.data));
+  if (!authHeader) {
+    axios.get(`https://boiling-tundra-41512.herokuapp.com/api/v1/${endpoint}`)
+      .then((res) => {
+        dispatch(success(res.data));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  } else {
+    axios.get(`https://boiling-tundra-41512.herokuapp.com/api/v1/${endpoint}`, {
+      headers: {
+        Authorization: `token ${localStorage.getItem('token')}`,
+      },
     })
-    .catch((error) => {
-      dispatch(failure(error));
-    });
+      .then((res) => {
+        dispatch(success(res.data));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  }
   // dispatch(fetchPropertiesRequest());
   // axios.get('https://boiling-tundra-41512.herokuapp.com/api/v1/properties')
   //   .then((res) => {
@@ -40,3 +50,15 @@ export const fetchData = (endpoint, request, success, failure) => function (disp
   //     dispatch(fetchPropertiesFailure(error));
   //   });
 };
+
+// export const fetchUserData = (endpoint, request, success, failure) => (dispatch) => {
+//   axios.get('appointments', {
+//     headers: {
+//       Authorization: `token ${localStorage.getItem('token')}`,
+//     },
+//   })
+//     .then((res) => {
+//       dispatch(setAppointments(res.data));
+//       setCurrentAppointments(res.data);
+//     });
+// }
