@@ -7,7 +7,7 @@ const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_USER':
       return { ...state, user: { ...payload }, isLoggedIn: true };
-    case 'REMOVE_USER':
+    case 'CLEAR_USER':
       return { user: {}, isLoggedIn: false };
     default:
       return state;
