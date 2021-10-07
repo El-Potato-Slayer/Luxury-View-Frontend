@@ -1,14 +1,14 @@
 const initialState = {
-  isAuthenticated: false,
+  isLoggedIn: false,
   user: {},
 };
 
 const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_USER':
-      return { ...state, user: { ...payload }, isAuthenticated: true };
+      return { ...state, user: { ...payload }, isLoggedIn: true };
     case 'REMOVE_USER':
-      return { user: {}, isAuthenticated: false };
+      return { user: {}, isLoggedIn: false };
     default:
       return state;
   }

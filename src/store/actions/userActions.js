@@ -1,8 +1,3 @@
-// export const setAuth = (payload) => ({
-//   type: 'SET_AUTH',
-//   payload,
-// });
-
 export const setUser = (payload) => ({
   type: 'SET_USER',
   payload,
