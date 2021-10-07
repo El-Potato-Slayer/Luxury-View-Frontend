@@ -5,15 +5,15 @@ export const setAppointments = (payload) => ({
   payload,
 });
 
-export const setAuth = (payload) => ({
-  type: 'SET_AUTH',
-  payload,
-});
+// export const setAuth = (payload) => ({
+//   type: 'SET_AUTH',
+//   payload,
+// });
 
-export const setUser = (payload) => ({
-  type: 'SET_USER',
-  payload,
-});
+// export const setUser = (payload) => ({
+//   type: 'SET_USER',
+//   payload,
+// });
 
 export const fetchData = (endpoint, request, success, failure,
   authHeader = false) => (dispatch) => {
