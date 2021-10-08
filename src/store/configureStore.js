@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import { fetchData } from './actions';
+import { fetchData, fetchUserData } from './actions';
 import { fetchAgentsFailure, fetchAgentsRequest, fetchAgentsSuccess } from './actions/agentActions';
 import { fetchAppointmentsFailure, fetchAppointmentsRequest, fetchAppointmentsSuccess } from './actions/appointmentActions';
 import { fetchPropertiesFailure, fetchPropertiesRequest, fetchPropertiesSuccess } from './actions/propertyActions';
@@ -14,6 +14,7 @@ store.dispatch(fetchData('properties', fetchPropertiesRequest, fetchPropertiesSu
 store.dispatch(fetchData('agents', fetchAgentsRequest, fetchAgentsSuccess, fetchAgentsFailure));
 // Fetch appointments if auth token exists
 if (authToken) {
+  store.dispatch(fetchUserData());
   store.dispatch(fetchData('appointments', fetchAppointmentsRequest, fetchAppointmentsSuccess, fetchAppointmentsFailure, true));
 }
 
