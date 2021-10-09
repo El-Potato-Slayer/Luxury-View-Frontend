@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setUser } from './userActions';
+// import { setUser } from './userActions';
 
 export const setAppointments = (payload) => ({
   type: 'SET_APPOINTMENTS',
@@ -32,18 +32,4 @@ export const fetchData = (endpoint, request, success, failure,
         dispatch(failure(error));
       });
   }
-};
-
-export const fetchUserData = () => (dispatch) => {
-  axios.get('http://localhost:3000/api/v1/auto-login', {
-    headers: {
-      Authorization: `token ${localStorage.getItem('token')}`,
-    },
-  })
-    .then((res) => {
-      dispatch(setUser(res.data));
-    })
-    .catch((error) => {
-      console.error(error);
-    });
 };
