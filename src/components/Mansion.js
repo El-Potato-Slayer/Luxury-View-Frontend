@@ -1,29 +1,17 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 function Mansion() {
   const { id } = useParams();
-  const [mansion, setMansion] = useState({});
+  const { data: mansion, error: err } = useFetch(`properties/${id}`, 'Mansion');
   const [rooms, setRooms] = useState([]);
   const [agent, setAgent] = useState({});
-  const [err, setErr] = useState('');
 
   const setMansionId = () => {
     localStorage.setItem('mansionId', id);
   };
-
-  function fetchMansionInformation() {
-    axios.get(`properties/${id}`)
-      .then((res) => {
-        setMansion(res.data);
-        setRooms(res.data.rooms);
-        setAgent(res.data.agent);
-      })
-      .catch(() => {
-        setErr('Mansion information could not be fetched');
-      });
-  }
 
   function displayShowcase(mansion) {
     return (
@@ -77,20 +65,30 @@ function Mansion() {
   function displayAppointment() {
     return (
       <div className="mansion-apt-wrapper">
-        <Link to="/appointments/create" className="info-button" onClick={setMansionId}>Book an appointment</Link>
+        <Link
+          to="/appointments/create"
+          className="info-button"
+          onClick={setMansionId}
+        >
+          Book an appointment
+
+        </Link>
       </div>
     );
   }
 
   useEffect(() => {
-    fetchMansionInformation();
-  }, []);
+    if (mansion) {
+      setRooms(mansion.rooms);
+      setAgent(mansion.agent);
+    }
+  }, [mansion]);
   return (
     <div className="page">
       <p>{err}</p>
-      {displayShowcase(mansion)}
-      {displayAgent(agent, mansion)}
-      {displayAppointment()}
+      {mansion && displayShowcase(mansion)}
+      {mansion && displayAgent(agent, mansion)}
+      {mansion && displayAppointment()}
     </div>
   );
 }
