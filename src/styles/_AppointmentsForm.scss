@@ -1,16 +1,19 @@
 .appointments-form {
   text-align: center;
+  background: white;
+  padding: 1rem 0;
+  border-radius: 1rem;
+
+  .page-title {
+    margin: 0;
+  }
 
   .sub-title {
     font-weight: 500;
   }
 
-  & > * {
-    margin: 2rem 0;
-  }
-
-  & > :last-child {
-    margin: 0;
+  & > :not(:last-child) {
+    padding: 1rem 0;
   }
 }
 

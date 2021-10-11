@@ -1,10 +1,11 @@
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function AppointmentsForm() {
-  const id = localStorage.getItem('mansionId');
+  const { id } = useParams();
   const [startDate, setStartDate] = useState(new Date());
   const isWeekday = (date) => {
     const day = date.getDay();
@@ -127,7 +128,7 @@ function AppointmentsForm() {
   }, []);
 
   return (
-    <div className="page-margin appointments-form">
+    <div className="appointments-form">
       <h2 className="page-title">Create an appointment</h2>
       {displaySuccess(success)}
       {displayError(error)}

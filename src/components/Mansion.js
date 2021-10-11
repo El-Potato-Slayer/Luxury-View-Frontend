@@ -1,19 +1,30 @@
 // import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import AppointmentsForm from './AppointmentsForm';
+import Backdrop from './Backdrop';
+import ModalCloseButton from './ModalCloseButton';
 
 function Mansion() {
   const { id } = useParams();
   const { data: mansion, error: err } = useFetch(`properties/${id}`, 'Mansion');
   const [rooms, setRooms] = useState([]);
   const [agent, setAgent] = useState({});
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.userReducer);
+  const history = useHistory();
 
-  const setMansionId = () => {
-    localStorage.setItem('mansionId', id);
+  const toggleForm = () => {
+    if (isLoggedIn) {
+      setIsFormOpen(!isFormOpen);
+    } else {
+      history.push('/login');
+    }
   };
 
-  function displayShowcase(mansion) {
+  function displayMansionDetails(mansion) {
     return (
       <div className="mansion-header">
         <img src={mansion.picture} alt="mansion" />
@@ -62,17 +73,22 @@ function Mansion() {
     );
   }
 
-  function displayAppointment() {
+  function displayAppointmentForm() {
     return (
       <div className="mansion-apt-wrapper">
-        <Link
-          to="/appointments/create"
-          className="info-button"
-          onClick={setMansionId}
-        >
-          Book an appointment
-
-        </Link>
+        {isFormOpen && isLoggedIn
+          && (
+            <>
+              <Backdrop formToggler={toggleForm} />
+              <div className="appointment-form-wrapper" style={{ top: `calc(${window.scrollY}px + 50%)`, transform: 'translateY(-50%)' }}>
+                <ModalCloseButton formToggler={toggleForm} />
+                <AppointmentsForm />
+              </div>
+            </>
+          )}
+        <button className="info-button" type="button" onClick={toggleForm}>
+          Book appointment
+        </button>
       </div>
     );
   }
@@ -83,12 +99,23 @@ function Mansion() {
       setAgent(mansion.agent);
     }
   }, [mansion]);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (isLoggedIn) {
+      if (isFormOpen) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = 'scroll';
+      }
+    }
+  }, [isFormOpen]);
   return (
-    <div className="page">
+    <div className="page mansion">
       <p>{err}</p>
-      {mansion && displayShowcase(mansion)}
+      {mansion && displayMansionDetails(mansion)}
       {mansion && displayAgent(agent, mansion)}
-      {mansion && displayAppointment()}
+      {mansion && displayAppointmentForm()}
     </div>
   );
 }
