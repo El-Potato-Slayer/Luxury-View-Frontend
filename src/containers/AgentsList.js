@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 
-function AgentsList({ agents }) {
+function AgentsList() {
+  const { agents } = useSelector((state) => state.agentsReducer);
+
   function displayAgent(agent) {
     return (
       <div>
@@ -46,12 +46,4 @@ function AgentsList({ agents }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  agents: state.agentsReducer.agents,
-});
-
-AgentsList.propTypes = {
-  agents: PropTypes.instanceOf(Array).isRequired,
-};
-
-export default connect(mapStateToProps)(AgentsList);
+export default AgentsList;
