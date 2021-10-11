@@ -1,21 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import useFetch from '../hooks/useFetch';
 
 function Agent() {
   const { id } = useParams();
-  const [agent, setAgent] = useState({});
-  const [err, setErr] = useState('');
-
-  function fetchAgent(id) {
-    axios.get(`agents/${id}`)
-      .then((res) => {
-        setAgent(res.data);
-      })
-      .catch(() => {
-        setErr('Agent information could not be fetched');
-      });
-  }
+  const { data: agent, error: err } = useFetch(`agents/${id}`, 'Agent');
 
   function displayError(error) {
     if (error !== '') {
@@ -25,7 +13,7 @@ function Agent() {
   }
 
   function displayAgent(error, agent) {
-    if (!error) {
+    if (!error && agent) {
       return (
         <>
           <div className="agent-picture-wrapper">
@@ -53,10 +41,6 @@ function Agent() {
     }
     return null;
   }
-
-  useEffect(() => {
-    fetchAgent(id);
-  }, []);
 
   return (
     <>
