@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import { Fragment } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { priceOutput, sortMansionByNewest } from '../helpers';
 
-function MansionsList({ mansions }) {
+function MansionsList() {
+  const { properties: mansions } = useSelector((state) => state.propertiesReducer);
   const filteredRooms = (mansion) => mansion.rooms.filter((room) => (
     room.name === 'Bedrooms' || room.name === 'Bathrooms'
   ));
@@ -82,12 +82,4 @@ function MansionsList({ mansions }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  mansions: state.propertiesReducer.properties,
-});
-
-MansionsList.propTypes = {
-  mansions: PropTypes.instanceOf(Array).isRequired,
-};
-
-export default connect(mapStateToProps)(MansionsList);
+export default MansionsList;
