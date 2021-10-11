@@ -1,0 +1,40 @@
+.modal-close-wrapper {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  right: 1rem;
+  top: 1rem;
+}
+
+.modal-close-wrapper:hover {
+  cursor: pointer;
+}
+
+.modal-close::after,
+.modal-close::before {
+  content: "";
+  top: 1rem;
+  right: 0rem;
+  width: 1.75rem;
+  height: 0.125rem;
+  background: $gray;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
+
+.modal-close::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: rotate(-45deg);
+}
