@@ -1,8 +1,9 @@
 // import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import { setSelectedGuardRoute } from '../store/actions/userActions';
 import AppointmentsForm from './AppointmentsForm';
 import Backdrop from './Backdrop';
 import ModalCloseButton from './ModalCloseButton';
@@ -15,11 +16,13 @@ function Mansion() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.userReducer);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const toggleForm = () => {
     if (isLoggedIn) {
       setIsFormOpen(!isFormOpen);
     } else {
+      dispatch(setSelectedGuardRoute(`mansions/${id}`));
       history.push('/login');
     }
   };
@@ -110,6 +113,7 @@ function Mansion() {
       }
     }
   }, [isFormOpen]);
+
   return (
     <div className="page mansion">
       <p>{err}</p>
