@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAuth, setUser } from '../store/actions';
+import { setUser } from '../store/actions/userActions';
 
 function Register() {
   const dispatch = useDispatch();
@@ -35,10 +35,9 @@ function Register() {
       .then((res) => {
         localStorage.setItem('token', res.data.token);
         dispatch(setUser(res.data));
-        dispatch(setAuth(true));
       })
       .catch(() => {
-        setError('Username or password is incorrect');
+        setError('An error occurred. Please try again later');
       });
   };
 

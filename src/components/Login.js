@@ -1,32 +1,36 @@
 import axios from 'axios';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { setAuth, setUser } from '../store/actions';
+import { setSelectedGuardRoute, setUser } from '../store/actions/userActions';
 
 function Login() {
   const history = useHistory();
-
-  if (history.location.state) {
-    localStorage.setItem('redirectedLocation', history.location.state.from.pathname);
-  }
-  const [input, setInput] = useState({
+  const { isLoggedIn, selectedGuardRoute } = useSelector((state) => state.userReducer);
+  const [loginInfo, setloginInfo] = useState({
     username: '',
     password: '',
   });
   const [error, setError] = useState('');
   const dispatch = useDispatch();
 
-  const inputHandler = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
+  useEffect(() => {
+    // Record path unatauthorized user tried to access before being asked to login
+    if (!isLoggedIn && history.location.state) {
+      dispatch(setSelectedGuardRoute(history.location.state.from.pathname));
+    }
+  }, [selectedGuardRoute]);
+
+  const submitHandler = (e) => {
+    setloginInfo({ ...loginInfo, [e.target.name]: e.target.value });
   };
 
   function postLogin() {
-    axios.post('login', input)
+    axios.post('login', loginInfo)
       .then((res) => {
         localStorage.setItem('token', res.data.token);
         dispatch(setUser(res.data));
-        dispatch(setAuth(true));
+        history.push(selectedGuardRoute);
       })
       .catch(() => {
         setError('Username or password is incorrect');
@@ -44,10 +48,10 @@ function Login() {
         {error}
         <h2 className="page-title">Login</h2>
         <fieldset>
-          <input className="input-field" type="text" name="username" placeholder="Username" onChange={inputHandler} />
+          <input className="input-field" type="text" name="username" placeholder="Username" onChange={submitHandler} />
         </fieldset>
         <fieldset>
-          <input className="input-field" type="password" name="password" placeholder="Password" onChange={inputHandler} />
+          <input className="input-field" type="password" name="password" placeholder="Password" onChange={submitHandler} />
         </fieldset>
         <button className="info-button" type="submit">Submit</button>
       </form>

@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setAuth, setUser } from '../store/actions';
+import { clearUser } from '../store/actions/userActions';
+// import { setAuth, setUser } from '../store/actions';
 
-function Navbar({ isAuth }) {
+function Navbar() {
   const [burgerState, setBurgerState] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   const logout = () => {
     localStorage.clear();
-    dispatch(setAuth(false));
-    dispatch(setUser({}));
+    dispatch(clearUser());
   };
 
   const handleBurgerState = () => {
@@ -46,7 +46,7 @@ function Navbar({ isAuth }) {
           <Link onClick={handleBurgerState} data-testid="navbar-mansions" className="nav-item" to="/mansions">Mansions</Link>
           <Link onClick={handleBurgerState} data-testid="navbar-appointments" className="nav-item" to="/appointments">Appointments</Link>
           <Link onClick={handleBurgerState} data-testid="navbar-agents" className="nav-item" to="/agents">Agents</Link>
-          {authNavItem(isAuth)}
+          {authNavItem(isLoggedIn)}
         </div>
         <div className="nav-social" />
       </div>
@@ -54,12 +54,4 @@ function Navbar({ isAuth }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  isAuth: state.authReducer.isAuth,
-});
-
-Navbar.propTypes = {
-  isAuth: PropTypes.bool.isRequired,
-};
-
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;

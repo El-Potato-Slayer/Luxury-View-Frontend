@@ -1,31 +1,13 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import Swiper styles
-// import 'swiper/css';
+import { authHeader } from '../constants/index';
+import useFetch from '../hooks/useFetch';
 
 function Appointment() {
   const { id } = useParams();
-  const [appointment, setAppointment] = useState({});
+  const { data: appointment, error: fetchError } = useFetch(`appointments/${id}`, 'Appointment', authHeader);
   const [agent, setAgent] = useState({});
   const [mansion, setMansion] = useState({});
-  const [fetchError, setFetchError] = useState();
-
-  function fetchAppointment() {
-    axios.get(`appointments/${id}`, {
-      headers: {
-        Authorization: `token ${localStorage.getItem('token')}`,
-      },
-    })
-      .then((res) => {
-        setAppointment(res.data);
-        setAgent(res.data.agent);
-        setMansion(res.data.property);
-      })
-      .catch(() => {
-        setFetchError('Appointment information could not be fetched. Please try again later.');
-      });
-  }
 
   function displayError(error) {
     if (error) {
@@ -104,17 +86,22 @@ function Appointment() {
   }
 
   useEffect(() => {
-    fetchAppointment();
-  }, []);
+    // fetchAppointment();
+    if (appointment) {
+      setAgent(appointment.agent);
+      setMansion(appointment.property);
+    }
+  }, [appointment]);
 
   return (
     <div>
       {displayError(fetchError)}
-      <div>
-        {displayAppointmentInformation(fetchError, appointment, mansion)}
-        {/* {displayAgentInformation(fetchError, agent)} */}
-        {displayAgentInformation(fetchError, agent)}
-      </div>
+      {appointment && (
+        <div>
+          {displayAppointmentInformation(fetchError, appointment, mansion)}
+          {displayAgentInformation(fetchError, agent)}
+        </div>
+      )}
     </div>
   );
 }

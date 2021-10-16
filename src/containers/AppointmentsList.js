@@ -1,31 +1,15 @@
-import PropTypes from 'prop-types';
 import axios from 'axios';
-import { connect, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { setAppointments } from '../store/actions';
+import { useSelector } from 'react-redux';
 
-function AppointmentsList({ appointments }) {
-  const dispatch = useDispatch();
-  const [currentAppointments, setCurrentAppointments] = useState(appointments);
+function AppointmentsList() {
+  const {
+    appointments: currentAppointments,
+    error: fetchError,
+  } = useSelector((state) => state.appointmentsReducer);
   const [success, setSuccess] = useState();
   const [deleteError, setDeleteError] = useState();
-  const [fetchError, setFetchError] = useState();
-  function fetchAppointments() {
-    try {
-      axios.get('appointments', {
-        headers: {
-          Authorization: `token ${localStorage.getItem('token')}`,
-        },
-      })
-        .then((res) => {
-          dispatch(setAppointments(res.data));
-          setCurrentAppointments(res.data);
-        });
-    } catch {
-      setFetchError('Appointments could not be fetched. Please try again later');
-    }
-  }
 
   const deleteAppointment = (id) => {
     axios.delete(`appointments/${id}`, {
@@ -34,7 +18,7 @@ function AppointmentsList({ appointments }) {
       },
     })
       .then(() => {
-        setCurrentAppointments(
+        currentAppointments(
           (currentAppointments) => currentAppointments.filter(
             (appointment) => id !== appointment.id,
           ),
@@ -111,10 +95,6 @@ function AppointmentsList({ appointments }) {
     );
   }
 
-  useEffect(() => {
-    fetchAppointments();
-  }, []);
-
   return (
     <div className="page">
       <h1 data-testid="appointments" className="page-title">Appointments</h1>
@@ -131,12 +111,4 @@ function AppointmentsList({ appointments }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  appointments: state.appointmentsReducer.appointments,
-});
-
-AppointmentsList.propTypes = {
-  appointments: PropTypes.instanceOf(Array).isRequired,
-};
-
-export default connect(mapStateToProps)(AppointmentsList);
+export default AppointmentsList;

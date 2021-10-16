@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetch = (dataUrl) => {
+const useFetch = (dataUrl, dataType = '', options = {}) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +15,7 @@ const useFetch = (dataUrl) => {
       try {
         const response = await axios.get(`http://localhost:3000/api/v1/${url}`, {
           cancelToken: source.token,
-          // ...options,
+          ...options,
         });
         if (isMounted) {
           setData(response.data);
@@ -23,8 +23,8 @@ const useFetch = (dataUrl) => {
         }
       } catch (error) {
         if (isMounted) {
-          // setError(`${dataType} information could not be fetched. Please try again later.`);
-          setError(error.message);
+          setError(`${dataType} information could not be fetched. Please try again later.`);
+          // setError(error.message);
           setData(null);
         }
       } finally {
