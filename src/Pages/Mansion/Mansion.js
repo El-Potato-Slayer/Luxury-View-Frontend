@@ -2,11 +2,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link, useHistory } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
-import { setSelectedGuardRoute } from '../store/actions/userActions';
-import AppointmentsForm from './AppointmentsForm';
-import Backdrop from './Backdrop';
-import ModalCloseButton from './ModalCloseButton';
+import useFetch from '../../Hooks/useFetch';
+import { setSelectedGuardRoute } from '../../Redux/actions/userActions';
+import AppointmentsForm from '../../Components/AppointmentsForm/AppointmentsForm';
+import Backdrop from '../../Components/Backdrop/Backdrop';
+import ModalCloseButton from '../../Components/ModalCloseButton/ModalCloseButton';
 
 function Mansion() {
   const { id } = useParams();

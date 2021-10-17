@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { setSelectedGuardRoute, setUser } from '../store/actions/userActions';
+import { setSelectedGuardRoute, setUser } from '../../Redux/actions/userActions';
 
 function Login() {
   const history = useHistory();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { authHeader } from '../constants/index';
-import useFetch from '../hooks/useFetch';
+import { authHeader } from '../../Constants/index';
+import useFetch from '../../Hooks/useFetch';
 
 function Appointment() {
   const { id } = useParams();

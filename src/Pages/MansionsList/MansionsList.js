@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { priceOutput, sortMansionByNewest } from '../helpers';
+import { priceOutput, sortMansionByNewest } from '../../Helpers';
 
 function MansionsList() {
   const { properties: mansions } = useSelector((state) => state.propertiesReducer);

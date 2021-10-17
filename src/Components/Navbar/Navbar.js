@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { clearUser } from '../store/actions/userActions';
+import { clearUser } from '../../Redux/actions/userActions';
 // import { setAuth, setUser } from '../store/actions';
 
 function Navbar() {

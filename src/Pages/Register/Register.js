@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../store/actions/userActions';
+import { setUser } from '../../Redux/actions/userActions';
 
 function Register() {
   const dispatch = useDispatch();

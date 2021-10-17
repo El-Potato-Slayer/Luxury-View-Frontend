@@ -2,18 +2,18 @@ import {
   Route, Switch, useHistory, Redirect,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import MansionsList from './containers/MansionsList';
-import AgentsList from './containers/AgentsList';
-import ProtectedRoute from './components/ProtectedRoute';
-import AppointmentsList from './containers/AppointmentsList';
-import AppointmentsForm from './components/AppointmentsForm';
-import Login from './components/Login';
-import Mansion from './components/Mansion';
-import Agent from './components/Agent';
-import Appointment from './components/Appointment';
-import Register from './components/Register';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Pages/Home/Home';
+import MansionsList from './Pages/MansionsList/MansionsList';
+import ProtectedRoute from './Auth/ProtectedRoute/ProtectedRoute';
+import AppointmentsList from './Pages/AppointmentsList/AppointmentsList';
+import AppointmentsForm from './Components/AppointmentsForm/AppointmentsForm';
+import Login from './Pages/Login/Login';
+import Mansion from './Pages/Mansion/Mansion';
+import Agent from './Pages/Agent/Agent';
+import Appointment from './Pages/Appointment/Appointment';
+import Register from './Pages/Register/Register';
+import AgentsList from './Pages/AgentsList/AgentsList';
 
 function App() {
   const { isLoggedIn } = useSelector((state) => state.userReducer);
