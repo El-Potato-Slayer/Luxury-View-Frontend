@@ -6,7 +6,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getRandomElements, priceOutput, sortMansionByNewest } from '../helpers';
+import { getRandomElements, priceOutput, sortMansionByNewest } from '../helpers/index';
 
 function Home({ mansions }) {
   const [randomMansions, setRandomMansions] = useState([]);
