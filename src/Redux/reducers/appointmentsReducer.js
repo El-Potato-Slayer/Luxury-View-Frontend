@@ -4,6 +4,12 @@ const initialState = {
   error: '',
 };
 
+// function filteredAppointments(appointments, id) {
+//   appointments.filter((appointment) => (
+//     appointment.id !== id
+//   ));
+// }
+
 const appointmentsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_APPOINTMENTS':
@@ -14,6 +20,8 @@ const appointmentsReducer = (state = initialState, { type, payload }) => {
       return { loading: false, appointments: [...payload], error: '' };
     case 'FETCH_APPOINTMENTS_FAILURE':
       return { loading: false, appointments: [], error: payload };
+    case 'DELETE_APPOINTMENT':
+      return { appointments: state.appointments.filter((item) => item.id !== payload) };
     default:
       return state;
   }

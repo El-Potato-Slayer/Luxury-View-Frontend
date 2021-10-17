@@ -11,3 +11,8 @@ export const fetchAppointmentsFailure = (error) => ({
   type: 'FETCH_APPOINTMENTS_FAILURE',
   payload: error,
 });
+
+export const removeAppointment = (id) => ({
+  type: 'DELETE_APPOINTMENT',
+  payload: id,
+});

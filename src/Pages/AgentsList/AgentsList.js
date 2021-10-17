@@ -1,41 +1,22 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import SkeletonListAgent from '../../Skeletons/SkeletonListAgent/SkeletonListAgent';
+import displayAgent from './helper';
 
 function AgentsList() {
-  const { agents } = useSelector((state) => state.agentsReducer);
-
-  function displayAgent(agent) {
-    return (
-      <div>
-        <div
-          className="listing-image"
-          style={{ background: `url(${agent.picture}) center / cover` }}
-        />
-        <div className="info">
-          <p className="listing-important">
-            {agent.first_name}
-            {' '}
-            {agent.last_name}
-          </p>
-          <p>
-            Number:
-            {' '}
-            {agent.number}
-          </p>
-          <p>
-            Email:
-            {' '}
-            {agent.email}
-          </p>
-        </div>
-      </div>
-    );
-  }
+  const { agents, loading } = useSelector((state) => state.agentsReducer);
 
   return (
     <div data-testid="agents" className="page">
       <h2 className="page-title">Agents</h2>
       <div data-testid="agents-listing" className="listings">
+        {loading && (
+          <>
+            <SkeletonListAgent />
+            <SkeletonListAgent />
+            <SkeletonListAgent />
+          </>
+        )}
         {agents.map((agent) => (
           <Link key={agent.id} to={`agents/${agent.id}`}>
             {displayAgent(agent)}

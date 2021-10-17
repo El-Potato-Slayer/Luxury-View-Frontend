@@ -11,3 +11,21 @@ export function priceOutput(price) {
 export function sortMansionByNewest(mansions) {
   return mansions.sort((a, b) => b.id - a.id);
 }
+
+export function showSuccess(success) {
+  if (success) {
+    return (
+      <p>{success}</p>
+    );
+  }
+  return null;
+}
+
+export function showDeleteError(error) {
+  if (error) {
+    return (
+      <p>{error}</p>
+    );
+  }
+  return null;
+}
