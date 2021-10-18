@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { showDeleteError, showSuccess } from '../../Helpers';
+import Notification from '../../Components/Notification/Notification';
 import { removeAppointment } from '../../Redux/actions/appointmentActions';
 import SkeletonListAgent from '../../Skeletons/SkeletonListAgent/SkeletonListAgent';
 import { displayAppointment } from './helper';
@@ -10,7 +10,6 @@ function AppointmentsList() {
   const {
     appointments: currentAppointments,
     loading,
-    // error: fetchError,
   } = useSelector((state) => state.appointmentsReducer);
   const dispatch = useDispatch();
   const [success, setSuccess] = useState();
@@ -33,8 +32,9 @@ function AppointmentsList() {
   return (
     <div className="page">
       <h1 data-testid="appointments" className="page-title">Appointments</h1>
-      {showSuccess(success)}
-      {showDeleteError(deleteError)}
+      {success && <Notification type="success" message={success} />}
+      {deleteError && <Notification type="error" message={deleteError} />}
+
       <div className="listings">
         {loading && (
           <>
