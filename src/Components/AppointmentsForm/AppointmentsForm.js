@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Notification from '../Notification/Notification';
 
 function AppointmentsForm() {
   const { id } = useParams();
@@ -48,22 +49,6 @@ function AppointmentsForm() {
       .catch(() => {
         setError('Mansion information could not be fetched');
       });
-  }
-
-  function displaySuccess(success) {
-    if (success) {
-      return (
-        <p>{success}</p>
-      );
-    }
-    return null;
-  }
-
-  function displayError(error) {
-    if (error) {
-      return (<p>{error}</p>);
-    }
-    return null;
   }
 
   function displayMansionInformation(error, mansion) {
@@ -130,11 +115,14 @@ function AppointmentsForm() {
   return (
     <div className="appointments-form">
       <h2 className="page-title">Create an appointment</h2>
-      {displaySuccess(success)}
-      {displayError(error)}
-      {displayMansionInformation(error, mansion)}
-      {displayAgentInformation(error, agent)}
-      {displayDate(error)}
+      {success && <Notification type="success" message={success} />}
+      {error && <Notification type="error" message={error} />}
+
+      <>
+        {displayMansionInformation(error, mansion)}
+        {displayAgentInformation(error, agent)}
+        {displayDate(error)}
+      </>
     </div>
   );
 }

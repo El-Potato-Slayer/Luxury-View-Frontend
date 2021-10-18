@@ -58,7 +58,7 @@ fieldset {
 }
 
 @import './styles/variables';
-@import './styles/notifications';
+@import './Components/Notification/Notification';
 @import './styles/components';
 @import './styles/carousel';
 @import './Components/AppointmentsForm/AppointmentsForm';
