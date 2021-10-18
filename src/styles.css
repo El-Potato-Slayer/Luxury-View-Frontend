@@ -942,6 +942,10 @@ fieldset {
   height: 6.25rem;
 }
 
+.skeleton-wrapper .home-newest-item::before {
+  background: none;
+}
+
 .skeleton.mansion-item-agent {
   margin-top: 2rem;
 }
