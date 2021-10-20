@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+}
+
+.page {
+  margin: 0 1.25rem 4rem;
+}
+
+.page-margin {
+  margin: 0 1.25rem 4rem;
+}
+
+.page-title {
+  display: grid;
+  place-items: center;
+  font-weight: 300;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .page {
+    margin: 0 2.75rem 4rem;
+  }
+
+  .page-margin {
+    margin: 0 2.75rem 4rem;
+  }
+
+  .image-margin {
+    margin: 0 2.75rem 4rem;
+  }
+}
+
+@import './styles/variables';
+@import './styles/notifications';
+@import './styles/components';
+@import './styles/carousel';
+@import './styles/AppointmentsForm';
+@import './styles/Appointment';
+@import './styles/Listings';
+@import './styles/AppointmentsList';
+@import './styles/Mansion';
+@import './styles/Home';
+@import './styles/Navbar';
+@import './styles/hambuger-menu';
+@import './styles/Agent';

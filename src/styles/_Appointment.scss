@@ -1,0 +1,40 @@
+.appointment-info {
+  display: grid;
+  // align-items: flex-end;
+
+  & > :nth-child(2) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+.appointment-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.appointment-pic {
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+  .appointment-info {
+    grid-template-columns: 1fr 1fr;
+
+    & > :first-child {
+      order: 2;
+    }
+  }
+
+  .appointment-title {
+    font-size: 2.75rem;
+  }
+
+  .appointment-agent {
+    margin: 0;
+  }
+}

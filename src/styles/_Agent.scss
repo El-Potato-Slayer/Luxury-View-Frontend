@@ -1,0 +1,31 @@
+.agent-picture-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+
+  &::before {
+    content: "";
+    height: 0.125rem;
+    width: 100%;
+    background: $light-gray;
+  }
+
+  &::after {
+    content: "";
+    height: 0.125rem;
+    width: 100%;
+    background: $light-gray;
+  }
+}
+
+.agent-picture {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.agent-details {
+  text-align: center;
+}
