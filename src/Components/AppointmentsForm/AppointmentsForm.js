@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Notification from '../Notification/Notification';
+import { useDispatch } from 'react-redux';
+import { createAppointment, displayAgentInformation, displayMansionInformation } from './helper';
 
-function AppointmentsForm() {
+function AppointmentsForm({ toggleForm }) {
   const { id } = useParams();
   const [startDate, setStartDate] = useState(new Date());
   const isWeekday = (date) => {
@@ -14,27 +16,7 @@ function AppointmentsForm() {
   };
   const [mansion, setMansion] = useState({});
   const [agent, setAgent] = useState({});
-  const [success, setSuccess] = useState();
-  const [error, setError] = useState();
-
-  const createAppointment = () => {
-    const data = {
-      property_id: id,
-      date: startDate,
-    };
-    axios.post('appointments', data,
-      {
-        headers: {
-          Authorization: `token ${localStorage.getItem('token')}`,
-        },
-      })
-      .then(() => {
-        setSuccess(`Appointment was made. ${agent.first_name} will get in touch with you shortly`);
-      })
-      .catch(() => {
-        setError('Appointment could not be made. Please try again later.');
-      });
-  };
+  const dispatch = useDispatch();
 
   function getMansionData() {
     axios.get(`properties/${id}`, {
@@ -46,66 +28,33 @@ function AppointmentsForm() {
         setMansion(res.data);
         setAgent(res.data.agent);
       })
-      .catch(() => {
-        setError('Mansion information could not be fetched');
+      .catch((err) => {
+        console.error(err.message);
       });
   }
 
-  function displayMansionInformation(error, mansion) {
-    if (!error) {
-      return (
-        <section>
-          <h3 className="sub-title">Property</h3>
-          <p>{mansion.name}</p>
-          <p>{mansion.Price}</p>
-        </section>
-      );
-    }
-    return null;
-  }
-
-  function displayAgentInformation(error, agent) {
-    if (!error) {
-      return (
-        <section>
-          <h3 className="sub-title">Agent</h3>
+  function displayDatePicker() {
+    return (
+      <>
+        <fieldset className="date-input">
           <p>
+            Please choose a time between 9am and 4pm, and
+            {' '}
             {agent.first_name}
-            &nbsp;
-            {agent.last_name}
+            {' '}
+            will get in touch
           </p>
-          <p>{agent.email}</p>
-        </section>
-      );
-    }
-    return null;
-  }
-
-  function displayDate(error) {
-    if (!error) {
-      return (
-        <>
-          <fieldset className="date-input">
-            <p>
-              Please choose a time between 9am and 4pm, and
-              {' '}
-              {agent.first_name}
-              {' '}
-              will get in touch
-            </p>
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              showTimeSelect
-              filterDate={isWeekday}
-              dateFormat="MMMM d, yyyy h:mm aa"
-            />
-          </fieldset>
-          <button type="submit" className="info-button" onClick={createAppointment}>Submit</button>
-        </>
-      );
-    }
-    return null;
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            showTimeSelect
+            filterDate={isWeekday}
+            dateFormat="MMMM d, yyyy h:mm aa"
+          />
+        </fieldset>
+        <button type="submit" className="info-button" onClick={() => { createAppointment(id, startDate, dispatch); toggleForm(); }}>Submit</button>
+      </>
+    );
   }
 
   useEffect(() => {
@@ -115,16 +64,17 @@ function AppointmentsForm() {
   return (
     <div className="appointments-form">
       <h2 className="page-title">Create an appointment</h2>
-      {success && <Notification type="success" message={success} />}
-      {error && <Notification type="error" message={error} />}
-
       <>
-        {displayMansionInformation(error, mansion)}
-        {displayAgentInformation(error, agent)}
-        {displayDate(error)}
+        {displayMansionInformation(mansion)}
+        {displayAgentInformation(agent)}
+        {displayDatePicker()}
       </>
     </div>
   );
 }
+
+AppointmentsForm.propTypes = {
+  toggleForm: PropTypes.func.isRequired,
+};
 
 export default AppointmentsForm;

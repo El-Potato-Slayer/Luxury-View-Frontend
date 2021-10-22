@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
+import Notification from '../../Components/Notification/Notification';
 import useFetch from '../../Hooks/useFetch';
+import { setAppointmentErrorMessage, setAppointmentSuccessMessage } from '../../Redux/actions/appointmentActions';
 import { setSelectedGuardRoute } from '../../Redux/actions/userActions';
 import { displayAgent, displayAppointmentForm, displayMansionDetails } from './helper';
 
@@ -13,6 +15,7 @@ function Mansion() {
   const [agent, setAgent] = useState({});
   const [isFormOpen, setIsFormOpen] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.userReducer);
+  const { success, error } = useSelector((state) => state.appointmentsReducer);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -41,11 +44,17 @@ function Mansion() {
         body.style.overflow = 'scroll';
       }
     }
+    return function cleanUp() {
+      dispatch(setAppointmentSuccessMessage(''));
+      dispatch(setAppointmentErrorMessage(''));
+    };
   }, [isFormOpen]);
 
   return (
     <div className="page mansion">
       <p>{err}</p>
+      {success && success.length && <Notification type="success" message={success} />}
+      {error && error.length && <Notification type="error" message={error} />}
       {mansion && displayMansionDetails(mansion, rooms)}
       {mansion && displayAgent(agent, mansion)}
       {mansion && displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm)}

@@ -276,7 +276,7 @@ fieldset {
   text-align: center;
   background: white;
   padding: 1rem 0;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .appointments-form .page-title {
@@ -300,6 +300,15 @@ fieldset {
   top: 50% !important;
   -webkit-transform: translate(-75%, 0%) !important;
           transform: translate(-75%, 0%) !important;
+}
+
+.react-datepicker__input-container > input {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 10.25rem;
+  margin-top: 0.25rem;
 }
 
 .appointment-info {

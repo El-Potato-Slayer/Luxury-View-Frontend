@@ -61,7 +61,7 @@ export function displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm) {
             <Backdrop formToggler={toggleForm} />
             <div className="appointment-form-wrapper" style={{ top: `calc(${window.scrollY}px + 50%)`, transform: 'translateY(-50%)' }}>
               <ModalCloseButton formToggler={toggleForm} />
-              <AppointmentsForm />
+              <AppointmentsForm toggleForm={toggleForm} />
             </div>
           </>
         )}

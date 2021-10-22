@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from '../../Components/Notification/Notification';
-import { removeAppointment } from '../../Redux/actions/appointmentActions';
+import { filterAppointment } from '../../Redux/actions/appointmentActions';
 import SkeletonListAgent from '../../Skeletons/SkeletonListAgent/SkeletonListAgent';
 import { displayAppointment } from './helper';
 
 function AppointmentsList() {
   const {
-    appointments: currentAppointments,
+    appointments,
     loading,
   } = useSelector((state) => state.appointmentsReducer);
   const dispatch = useDispatch();
@@ -21,13 +21,17 @@ function AppointmentsList() {
       },
     })
       .then(() => {
-        dispatch(removeAppointment(id));
+        dispatch(filterAppointment(id));
         setSuccess('Appointment successfully canceled');
       })
       .catch(() => {
         setDeleteError('An error occurred with the cancelation of the appointment. Please try again later or contact your agent');
       });
   };
+
+  useEffect(() => {
+    console.log(appointments);
+  }, [appointments]);
 
   return (
     <div className="page">
@@ -43,7 +47,7 @@ function AppointmentsList() {
             <SkeletonListAgent />
           </>
         )}
-        {currentAppointments && currentAppointments.map((appointment) => (
+        {appointments && appointments.map((appointment) => (
           <div key={appointment.id} className="appointment-card">
             {displayAppointment(appointment, deleteAppointment)}
           </div>
