@@ -58,12 +58,57 @@ fieldset {
 }
 
 .notification {
-  max-width: 40rem;
+  min-width: 14rem;
   margin: 0 auto;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 0.5rem;
   text-align: center;
   margin-bottom: 1rem;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-animation: moveDown 6s ease-in-out forwards;
+          animation: moveDown 6s ease-in-out forwards;
+}
+
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  10% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+  90% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  10% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+  90% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
 }
 
 .text-success {

@@ -34,26 +34,28 @@ function AppointmentsList() {
   }, [appointments]);
 
   return (
-    <div className="page">
-      <h1 data-testid="appointments" className="page-title">Appointments</h1>
+    <>
       {success && <Notification type="success" message={success} />}
       {deleteError && <Notification type="error" message={deleteError} />}
+      <div className="page">
+        <h1 data-testid="appointments" className="page-title">Appointments</h1>
 
-      <div className="listings">
-        {loading && (
+        <div className="listings">
+          {loading && (
           <>
             <SkeletonListAgent />
             <SkeletonListAgent />
             <SkeletonListAgent />
           </>
-        )}
-        {appointments && appointments.map((appointment) => (
-          <div key={appointment.id} className="appointment-card">
-            {displayAppointment(appointment, deleteAppointment)}
-          </div>
-        ))}
+          )}
+          {appointments && appointments.map((appointment) => (
+            <div key={appointment.id} className="appointment-card">
+              {displayAppointment(appointment, deleteAppointment)}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

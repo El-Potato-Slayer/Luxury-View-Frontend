@@ -51,14 +51,16 @@ function Mansion() {
   }, [isFormOpen]);
 
   return (
-    <div className="page mansion">
-      <p>{err}</p>
+    <>
       {success && success.length && <Notification type="success" message={success} />}
       {error && error.length && <Notification type="error" message={error} />}
-      {mansion && displayMansionDetails(mansion, rooms)}
-      {mansion && displayAgent(agent, mansion)}
-      {mansion && displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm)}
-    </div>
+      <div className="page mansion">
+        <p>{err}</p>
+        {mansion && displayMansionDetails(mansion, rooms)}
+        {mansion && displayAgent(agent, mansion)}
+        {mansion && displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm)}
+      </div>
+    </>
   );
 }
 
