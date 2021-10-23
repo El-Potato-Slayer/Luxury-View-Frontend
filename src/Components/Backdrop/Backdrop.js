@@ -7,7 +7,7 @@ function Backdrop({ formToggler }) {
       aria-hidden="true"
       onClick={formToggler}
       onKeyDown={formToggler}
-      style={{ top: window.scrollY, transform: 'translateY(0%)' }}
+      // style={{ top: window.scrollY, transform: 'translateY(0%)' }}
     />
   );
 }
