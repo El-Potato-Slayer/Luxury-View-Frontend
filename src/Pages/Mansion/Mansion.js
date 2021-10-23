@@ -121,13 +121,13 @@ function Mansion() {
         {mansion && displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm)} */}
       </div>
 
-      {isFormOpen && isLoggedIn
+      {isLoggedIn
         && (
           <>
-            <Backdrop formToggler={toggleForm} />
+            <Backdrop isOpen={isFormOpen} formToggler={toggleForm} />
             {/* <div className="appointment-form-wrapper"
             style={{ top: `calc(${window.scrollY}px + 50%)`, transform: 'translateY(-50%)' }}> */}
-            <div className="appointment-form-wrapper">
+            <div className={`appointment-form-wrapper ${isFormOpen ? 'open' : ''}`}>
               <ModalCloseButton formToggler={toggleForm} />
               <AppointmentsForm toggleForm={toggleForm} />
             </div>

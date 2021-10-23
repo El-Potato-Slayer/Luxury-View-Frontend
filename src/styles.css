@@ -574,12 +574,18 @@ fieldset {
 .backdrop {
   content: '';
   position: fixed;
-  bottom: 0;
+  bottom: -100%;
   left: 0;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.backdrop.open {
+  bottom: 0%;
 }
 
 .shimmer-wrapper {
@@ -921,12 +927,18 @@ fieldset {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 50%;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+  top: -50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.appointment-form-wrapper.open {
+  top: 50%;
 }
 
 @media only screen and (min-width: 768px) {

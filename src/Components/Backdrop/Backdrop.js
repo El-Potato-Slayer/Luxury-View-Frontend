@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
-function Backdrop({ formToggler }) {
+function Backdrop({ isOpen, formToggler }) {
+  const hidden = isOpen ? 'open' : '';
+
   return (
     <div
-      className="backdrop"
+      className={`backdrop ${hidden}`}
       aria-hidden="true"
       onClick={formToggler}
       onKeyDown={formToggler}
@@ -13,6 +15,7 @@ function Backdrop({ formToggler }) {
 }
 
 Backdrop.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
   formToggler: PropTypes.func.isRequired,
 };
 
