@@ -1,107 +1,221 @@
-
-.mansion-header {
-  display: grid;
+.listing-page {
+  // display: grid;
+  // grid-template-columns: 1fr;
 }
 
-.mansion-features {
-  display: grid;
+.listing-page__image {
+  // width: 100%;
+  // height: 100%;
 }
 
-.mansion-title {
+.listing-page-type {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  padding: 1.5625rem 0;
+  border-bottom: 1px solid $light-gray;
+  width: 100%;
   text-align: center;
-  font-weight: 500;
-  margin: 1rem 0;
 }
 
-.room-features {
+.listing-page__main {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1.25rem;
+  // padding: 3.125rem 0 1.5625rem 0;
+  height: 100%;
   align-items: center;
-  padding: 0.5rem 1rem;
+// height: 100%;
 }
 
-.room-features:nth-of-type(odd) {
-  background: $light-gray;
-}
-
-.mansion-description {
-  margin: 2rem 0;
-}
-
-.mansion-agent {
-  .contact {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0;
-
-    & > * {
-      padding: 1rem 0;
-      color: $info;
-    }
-
-    & > :first-child {
-      border-top: 1px $light-gray solid;
-      border-bottom: 1px $light-gray solid;
-    }
-
-    & > :last-child {
-      border-bottom: 1px $light-gray solid;
-    }
+.listing-page__main__title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 400;
   }
+
+.listing-page__price {
+  // margin: 1.25rem 0;
 }
 
-.mansion-agent-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  img {
-    width: 3rem;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-}
-
-.mansion-apt-wrapper {
+.listing-page__features {
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.listing-page__main__buttons {
+  align-self: center;
+  margin-top: auto;
+  background-color: rebeccapurple;
+}
+
+.listing-page__extra {
+  display: grid;
+  row-gap: 2rem;
+  padding: 2rem 0;
+  
+  & > div {
+    padding: 0 1.25rem;
+  }
+}
+
+.listing-page__extra__title{
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.listing-description {
 }
 
 .appointment-form-wrapper{
   max-width: 44rem;
-  position: absolute;
+  position: fixed;
   left: 0; 
   right: 0; 
+  bottom: 50%;
+  transform: translateY(50%);
   margin-left: auto; 
   margin-right: auto; 
   width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  .mansion-header {
-    grid-template-columns: 2fr 1fr;
-
-    .mansion-title {
-      text-align: end;
-    }
-  }
-
-  .mansion-details {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-  }
-
-  .mansion-agent {
-    .contact {
-      margin: 0;
-    }
-  }
-
-  .mansion-description {
-    margin: 2rem 0;
-    padding-right: 2rem;
-    max-width: 70ch;
+  .listing-page__features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .listing-page {
+    // grid-template-columns: 1fr 1fr;
+  }
+
+  .listing-page__main {
+    padding: 0 3.125rem;
+  }
+
+  .listing-page__main__title {
+    font-size: 2rem;
+  }
+
+  .listing-page__extra {
+    grid-template-columns: 1fr 1fr;
+
+    & > div {
+      padding: 2rem 3.125rem;
+    }
+  }
+
+  .listing-page__extra__title{
+    font-size: 1.5rem;
+  }
+}
+// .mansion-header {
+//   display: grid;
+// }
+
+// .mansion-features {
+//   display: grid;
+// }
+
+// .mansion-title {
+//   text-align: center;
+//   font-weight: 500;
+//   margin: 1rem 0;
+// }
+
+// .room-features {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 0.5rem 1rem;
+// }
+
+// .room-features:nth-of-type(odd) {
+//   background: $light-gray;
+// }
+
+// .mansion-description {
+//   margin: 2rem 0;
+// }
+
+// .mansion-agent {
+//   .contact {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 2rem 0;
+
+//     & > * {
+//       padding: 1rem 0;
+//       color: $info;
+//     }
+
+//     & > :first-child {
+//       border-top: 1px $light-gray solid;
+//       border-bottom: 1px $light-gray solid;
+//     }
+
+//     & > :last-child {
+//       border-bottom: 1px $light-gray solid;
+//     }
+//   }
+// }
+
+// .mansion-agent-details {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   img {
+//     width: 3rem;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 50%;
+//   }
+// }
+
+// .mansion-apt-wrapper {
+//   display: grid;
+//   place-items: center;
+// }
+
+// .appointment-form-wrapper{
+//   max-width: 44rem;
+//   position: absolute;
+//   left: 0; 
+//   right: 0; 
+//   margin-left: auto; 
+//   margin-right: auto; 
+//   width: 100%;
+// }
+
+// @media only screen and (min-width: 768px) {
+//   .mansion-header {
+//     grid-template-columns: 2fr 1fr;
+
+//     .mansion-title {
+//       text-align: end;
+//     }
+//   }
+
+//   .mansion-details {
+//     display: grid;
+//     grid-template-columns: 2fr 1fr;
+//     align-items: center;
+//   }
+
+//   .mansion-agent {
+//     .contact {
+//       margin: 0;
+//     }
+//   }
+
+//   .mansion-description {
+//     margin: 2rem 0;
+//     padding-right: 2rem;
+//     max-width: 70ch;
+//   }
+// }

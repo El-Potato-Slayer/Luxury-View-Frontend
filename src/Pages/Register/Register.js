@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { setUser } from '../../Redux/actions/userActions';
 
 function Register() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [input, setInput] = useState({
     username: '',
@@ -22,7 +24,7 @@ function Register() {
   function displayError(error) {
     if (error) {
       return (
-        <p>{Error}</p>
+        <p>{error}</p>
       );
     }
     return null;
@@ -35,6 +37,7 @@ function Register() {
       .then((res) => {
         localStorage.setItem('token', res.data.token);
         dispatch(setUser(res.data));
+        history.push('/');
       })
       .catch(() => {
         setError('An error occurred. Please try again later');
@@ -59,9 +62,9 @@ function Register() {
           <input className="input-field" type="text" placeholder="Email" name="email" onChange={inputHandler} />
         </fieldset>
         <fieldset>
-          <input className="input-field" type="text" placeholder="Password" name="password" onChange={inputHandler} />
+          <input className="input-field" type="password" placeholder="Password" name="password" onChange={inputHandler} />
         </fieldset>
-        <button className="info-button" type="submit" onClick={registerUser}>Submit</button>
+        <button className="button info" type="submit" onClick={registerUser}>Submit</button>
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { clearAppointments } from '../../Redux/actions/appointmentActions';
 import { clearUser } from '../../Redux/actions/userActions';
 // import { setAuth, setUser } from '../store/actions';
 
@@ -11,6 +12,7 @@ function Navbar() {
   const logout = () => {
     localStorage.clear();
     dispatch(clearUser());
+    dispatch(clearAppointments());
   };
 
   const handleBurgerState = () => {

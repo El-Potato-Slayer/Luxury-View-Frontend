@@ -7,6 +7,8 @@ const initialState = {
 
 const appointmentsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case 'CLEAR_APPOINTMENTS':
+      return { ...state, appointments: [] };
     case 'SET_APPOINTMENTS':
       return { ...state, appointments: [...payload] };
     case 'SET_APPOINTMENTS_SUCCESS_MESSAGE':

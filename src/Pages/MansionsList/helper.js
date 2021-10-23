@@ -1,15 +1,11 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { priceOutput } from '../../Helpers';
-
-const filteredRooms = (mansion) => mansion.rooms.filter((room) => (
-  room.name === 'Bedrooms' || room.name === 'Bathrooms'
-));
+import { mainRooms, priceOutput } from '../../Helpers';
 
 function listRooms(mansion) {
   return (
     <p className="listing-room">
-      {filteredRooms(mansion).map((room) => (
+      {mainRooms(mansion).map((room) => (
         <Fragment key={room.id}>
           <span>
             {room.amount}

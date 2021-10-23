@@ -30,7 +30,11 @@ function Login() {
       .then((res) => {
         localStorage.setItem('token', res.data.token);
         dispatch(setUser(res.data));
-        history.push(selectedGuardRoute);
+        if (selectedGuardRoute) {
+          history.push(selectedGuardRoute);
+        } else {
+          history.push('/');
+        }
       })
       .catch(() => {
         setError('Username or password is incorrect');
@@ -53,7 +57,7 @@ function Login() {
         <fieldset>
           <input className="input-field" type="password" name="password" placeholder="Password" onChange={submitHandler} />
         </fieldset>
-        <button className="info-button" type="submit">Submit</button>
+        <button className="button info" type="submit">Submit</button>
       </form>
     </div>
   );

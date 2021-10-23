@@ -29,3 +29,7 @@ export function showDeleteError(error) {
   }
   return null;
 }
+
+export const mainRooms = (mansion) => mansion.rooms.filter((room) => (
+  room.name === 'Bedrooms' || room.name === 'Bathrooms'
+));

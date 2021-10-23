@@ -39,7 +39,8 @@ function App() {
           <AgentsList />
         </Route>
         <Route path="/login">
-          {isLoggedIn ? <Redirect to={location} /> : <Login />}
+          {isLoggedIn ? <Redirect to="/" /> : <Login />}
+          {/* {isLoggedIn ? <Redirect to={location} /> : <Login />} */}
         </Route>
         <Route path="/register">
           {isLoggedIn ? <Redirect to={location} /> : <Register />}

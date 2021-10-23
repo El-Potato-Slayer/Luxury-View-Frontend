@@ -2,7 +2,9 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Notification from '../../Components/Notification/Notification';
-import { filterAppointment } from '../../Redux/actions/appointmentActions';
+import {
+  fetchAppointmentsFailure, fetchAppointmentsRequest, fetchAppointmentsSuccess, filterAppointment,
+} from '../../Redux/actions/appointmentActions';
 import SkeletonListAgent from '../../Skeletons/SkeletonListAgent/SkeletonListAgent';
 import { displayAppointment } from './helper';
 
@@ -30,8 +32,21 @@ function AppointmentsList() {
   };
 
   useEffect(() => {
-    console.log(appointments);
-  }, [appointments]);
+    if (!appointments.length) {
+      dispatch(fetchAppointmentsRequest());
+      axios.get('appointments', {
+        headers: {
+          Authorization: `token ${localStorage.getItem('token')}`,
+        },
+      })
+        .then((res) => {
+          dispatch(fetchAppointmentsSuccess(res.data));
+        })
+        .catch(() => {
+          dispatch(fetchAppointmentsFailure('Appointments could not be fetched'));
+        });
+    }
+  }, []);
 
   return (
     <>

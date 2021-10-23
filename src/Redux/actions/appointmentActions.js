@@ -1,3 +1,7 @@
+export const clearAppointments = () => ({
+  type: 'CLEAR_APPOINTMENTS',
+});
+
 export const setAppointmentSuccessMessage = (message) => ({
   type: 'SET_APPOINTMENTS_SUCCESS_MESSAGE',
   payload: message,

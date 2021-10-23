@@ -1,0 +1,42 @@
+.agent-contact-form {
+  border: 1px solid $light-gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-contact-form__agent-details {
+  display: flex;
+  border-bottom: 1px solid $light-gray;
+  padding: 1.5rem;
+}
+
+.agent-contact-form__agent-picture {
+  width: 3.125rem;
+  height: 3.125rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.agent-contact-form__agent-details__main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+
+  a {
+    color: $info;
+  }
+}
+
+.agent-contact-form__inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.agent-contact-form__input {
+  font-family: 'Poppins', sans-serif;
+  border: 1px $light-gray solid;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
