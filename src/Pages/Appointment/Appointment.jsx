@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { authHeader } from '../../Constants/index';
 import useFetch from '../../Hooks/useFetch';
 
 function Appointment() {
   const { id } = useParams();
+  const authHeader = {
+    headers: {
+      Authorization: `token ${localStorage.getItem('token')}`,
+    },
+  };
+
   const { data: appointment, error: fetchError } = useFetch(`appointments/${id}`, 'Appointment', authHeader);
   const [agent, setAgent] = useState({});
   const [mansion, setMansion] = useState({});
