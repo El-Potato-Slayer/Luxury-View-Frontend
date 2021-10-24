@@ -7,6 +7,8 @@ import {
 } from '../../Redux/actions/appointmentActions';
 import SkeletonListAgent from '../../Skeletons/SkeletonListAgent/SkeletonListAgent';
 import { displayAppointment } from './helper';
+import ConfirmationForm from '../../Components/ConfirmationForm/ConfirmationForm';
+import Backdrop from '../../Components/Backdrop/Backdrop';
 
 function AppointmentsList() {
   const {
@@ -16,6 +18,13 @@ function AppointmentsList() {
   const dispatch = useDispatch();
   const [success, setSuccess] = useState();
   const [deleteError, setDeleteError] = useState();
+  const [selectedId, setSelectedId] = useState();
+  const [isConfirmOpen, setisConfirmOpen] = useState(false);
+
+  const toggleConfirmation = () => {
+    setisConfirmOpen(!isConfirmOpen);
+  };
+
   const deleteAppointment = (id) => {
     axios.delete(`appointments/${id}`, {
       headers: {
@@ -29,6 +38,7 @@ function AppointmentsList() {
       .catch(() => {
         setDeleteError('An error occurred with the cancelation of the appointment. Please try again later or contact your agent');
       });
+    toggleConfirmation();
   };
 
   useEffect(() => {
@@ -48,6 +58,15 @@ function AppointmentsList() {
     }
   }, []);
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (isConfirmOpen) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+  }, [isConfirmOpen]);
+
   return (
     <>
       {success && <Notification type="success" message={success} />}
@@ -65,10 +84,17 @@ function AppointmentsList() {
           )}
           {appointments && appointments.map((appointment) => (
             <div key={appointment.id} className="appointment-card">
-              {displayAppointment(appointment, deleteAppointment)}
+              {displayAppointment(appointment, setSelectedId, toggleConfirmation)}
             </div>
           ))}
         </div>
+        <Backdrop isOpen={isConfirmOpen} formToggler={toggleConfirmation} />
+        <ConfirmationForm
+          message="Are you sure you want to cancel this appointment?"
+          isOpen={isConfirmOpen}
+          confirmHandler={() => deleteAppointment(selectedId)}
+          rejectHandler={toggleConfirmation}
+        />
       </div>
     </>
   );

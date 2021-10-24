@@ -8,7 +8,7 @@ export function formatDate(date) {
   return `Date: ${arr.join(' ').concat(` ${time}`)}`;
 }
 
-export function displayAppointment(appointment, deleteFunc) {
+export function displayAppointment(appointment, idSelector, confirmFormToggle) {
   return (
     <div>
       <div className="listing-image" style={{ background: `url(${appointment.property.picture}) center / cover` }} />
@@ -32,7 +32,7 @@ export function displayAppointment(appointment, deleteFunc) {
         >
           Details
         </Link>
-        <button type="button" className="button error" onClick={() => deleteFunc(appointment.id)}>Cancel</button>
+        <button type="button" className="button error" onClick={() => { idSelector(appointment.id); confirmFormToggle(); }}>Cancel</button>
       </div>
     </div>
   );
