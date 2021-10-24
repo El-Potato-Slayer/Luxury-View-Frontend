@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
 
-function userButtons(id, deleteFunc) {
-  return (
-    <button type="button" onClick={() => deleteFunc(id)}>Cancel</button>
-  );
-}
-
 export function formatDate(date) {
   const d = new Date(date);
   let arr = d.toString().split(' ').splice(0, 5);
@@ -33,11 +27,12 @@ export function displayAppointment(appointment, deleteFunc) {
       </div>
       <div className="user-buttons">
         <Link
+          className="button info"
           to={`appointments/${appointment.id}`}
         >
-          Appointment Details
+          Details
         </Link>
-        {userButtons(appointment.id, deleteFunc)}
+        <button type="button" className="button error" onClick={() => deleteFunc(appointment.id)}>Cancel</button>
       </div>
     </div>
   );
