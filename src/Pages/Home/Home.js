@@ -1,7 +1,7 @@
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getRandomElements, sortMansionByNewest } from '../../Helpers/index';
+import { getRandomElements, sortMansionByNewest } from '../../Helpers/helper';
 import {
   displayAsSeenIn, displayHeader, displayNewestProperties, displaySoonToCome,
 } from './helper';

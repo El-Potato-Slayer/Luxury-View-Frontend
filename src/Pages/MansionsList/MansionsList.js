@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import SkeletonListItem from '../../Skeletons/SkeletonListMansion/SkeletonListMansion';
-import { sortMansionByNewest } from '../../Helpers/index';
+import { sortMansionByNewest } from '../../Helpers/helper';
 import { listAgent, listMansionDetails } from './helper';
 
 function MansionsList() {

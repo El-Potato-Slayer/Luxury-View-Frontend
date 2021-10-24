@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import ListingFeature from '../../Components/ListingFeature/ListingFeature';
 import Notification from '../../Components/Notification/Notification';
-import { mainRooms, priceOutput } from '../../Helpers/index';
+import { mainRooms, priceOutput } from '../../Helpers/helper';
 import useFetch from '../../Hooks/useFetch';
 import { setAppointmentErrorMessage, setAppointmentSuccessMessage } from '../../Redux/actions/appointmentActions';
 import { setSelectedGuardRoute } from '../../Redux/actions/userActions';

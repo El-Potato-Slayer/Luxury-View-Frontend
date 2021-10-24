@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { mainRooms, priceOutput } from '../../Helpers/index';
+import { mainRooms, priceOutput } from '../../Helpers/helper';
 
 function listRooms(mansion) {
   return (
