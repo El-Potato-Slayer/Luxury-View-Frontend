@@ -2,11 +2,11 @@
   text-align: center;
   background: white;
   padding: 1rem 0;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
-  .page-title {
-    margin: 0;
-  }
+  // .page-title {
+  //   margin: 0;
+  // }
 
   .sub-title {
     font-weight: 500;
@@ -15,6 +15,11 @@
   & > :not(:last-child) {
     padding: 1rem 0;
   }
+}
+
+.appointments-form__title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 .date-input {

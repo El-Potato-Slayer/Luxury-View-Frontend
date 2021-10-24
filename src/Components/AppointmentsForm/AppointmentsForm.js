@@ -52,7 +52,7 @@ function AppointmentsForm({ toggleForm }) {
             dateFormat="MMMM d, yyyy h:mm aa"
           />
         </fieldset>
-        <button type="submit" className="info-button" onClick={() => { createAppointment(id, startDate, dispatch); toggleForm(); }}>Submit</button>
+        <button type="submit" className="button info" onClick={() => { createAppointment(id, startDate, dispatch); toggleForm(); }}>Submit</button>
       </>
     );
   }
@@ -63,7 +63,7 @@ function AppointmentsForm({ toggleForm }) {
 
   return (
     <div className="appointments-form">
-      <h2 className="page-title">Create an appointment</h2>
+      <h2 className="page-title appointments-form__title">Create An Appointment</h2>
       <>
         {displayMansionInformation(mansion)}
         {displayAgentInformation(agent)}

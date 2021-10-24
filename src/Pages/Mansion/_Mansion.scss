@@ -51,7 +51,8 @@
 }
 
 .listing-page__extra {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   row-gap: 2rem;
   padding: 2rem 0;
   
@@ -72,15 +73,16 @@
 
 .appointment-form-wrapper{
   max-width: 44rem;
+  // width: min-content;
+  min-width: min-content;
   position: fixed;
   left: 0; 
   right: 0; 
-  // bottom: 50%;
   top: -50%;
   transform: translateY(-50%);
   margin-left: auto; 
   margin-right: auto; 
-  width: 100%;
+  // width: 100%;
   transition: all 1s ease-in-out;
 }
 
@@ -108,6 +110,7 @@
   }
 
   .listing-page__extra {
+    display: grid;
     grid-template-columns: 1fr 1fr;
 
     & > div {
