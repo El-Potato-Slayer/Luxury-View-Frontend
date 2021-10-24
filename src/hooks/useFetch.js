@@ -13,8 +13,8 @@ const useFetch = (dataUrl, dataType = '', options = {}) => {
     const fetchData = async (url) => {
       setIsLoading(true);
       try {
-        // const response = await axios.get(`https://secure-journey-36191.herokuapp.com/api/v1/${url}`, {
-        const response = await axios.get(`http://localhost:3000/api/v1/${url}`, {
+        // const response = await axios.get(`http://localhost:3000/api/v1/${url}`, {
+        const response = await axios.get(`https://secure-journey-36191.herokuapp.com/api/v1/${url}`, {
           cancelToken: source.token,
           ...options,
         });
