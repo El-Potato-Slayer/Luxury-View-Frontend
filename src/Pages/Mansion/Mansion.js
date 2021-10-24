@@ -1,15 +1,12 @@
-// import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import ListingFeature from '../../Components/ListingFeature/ListingFeature';
 import Notification from '../../Components/Notification/Notification';
-import { mainRooms, priceOutput } from '../../Helpers';
+import { mainRooms, priceOutput } from '../../Helpers/index';
 import useFetch from '../../Hooks/useFetch';
 import { setAppointmentErrorMessage, setAppointmentSuccessMessage } from '../../Redux/actions/appointmentActions';
 import { setSelectedGuardRoute } from '../../Redux/actions/userActions';
-// import { displayAgent, displayAppointmentForm, displayMansionDetails } from './helper';
-
 import AppointmentsForm from '../../Components/AppointmentsForm/AppointmentsForm';
 import Backdrop from '../../Components/Backdrop/Backdrop';
 import ModalCloseButton from '../../Components/ModalCloseButton/ModalCloseButton';
@@ -19,7 +16,6 @@ import AgentContactForm from '../../Components/AgentContactForm/AgentContactForm
 function Mansion() {
   const { id } = useParams();
   const { data: mansion, error: err } = useFetch(`properties/${id}`, 'Mansion');
-  const [rooms, setRooms] = useState([]);
   const [agent, setAgent] = useState({});
   const [isFormOpen, setIsFormOpen] = useState(false);
   const { isLoggedIn, user } = useSelector((state) => state.userReducer);
@@ -38,12 +34,7 @@ function Mansion() {
 
   useEffect(() => {
     if (mansion) {
-      setRooms(mansion.rooms);
       setAgent(mansion.agent);
-      console.log(rooms);
-      console.log(agent);
-      console.log(toggleForm);
-      console.log(mansion);
     }
   }, [mansion]);
 
@@ -90,9 +81,6 @@ function Mansion() {
                   <div className="listing-page__main__buttons">
                     <Button type="info" name="Book Appointment" onClick={toggleForm} />
                   </div>
-                  {/* <button className="info-button" type="button" onClick={toggleForm}>
-                  Book appointment
-                </button> */}
                 </div>
               </section>
             </div>
@@ -116,17 +104,12 @@ function Mansion() {
             </section>
           </>
         )}
-        {/* {mansion && displayMansionDetails(mansion, rooms)}
-        {mansion && displayAgent(agent, mansion)}
-        {mansion && displayAppointmentForm(isFormOpen, isLoggedIn, toggleForm)} */}
       </div>
 
       {isLoggedIn
         && (
           <>
             <Backdrop isOpen={isFormOpen} formToggler={toggleForm} />
-            {/* <div className="appointment-form-wrapper"
-            style={{ top: `calc(${window.scrollY}px + 50%)`, transform: 'translateY(-50%)' }}> */}
             <div className={`appointment-form-wrapper ${isFormOpen ? 'open' : ''}`}>
               <ModalCloseButton formToggler={toggleForm} />
               <AppointmentsForm toggleForm={toggleForm} />

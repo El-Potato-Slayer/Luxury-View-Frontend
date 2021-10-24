@@ -2,7 +2,7 @@ import {
   CarouselProvider, DotGroup, Slide, Slider,
 } from 'pure-react-carousel';
 import { Link } from 'react-router-dom';
-import { priceOutput } from '../../Helpers';
+import { priceOutput } from '../../Helpers/index';
 import SkeletonHeader from '../../Skeletons/SkeletonHome/SkeletonHeader';
 import SkeletonRectangle from '../../Skeletons/SkeletonHome/SkeletonRectangle';
 
