@@ -641,33 +641,35 @@ fieldset {
 .confirmation-form {
   background: white;
   position: fixed;
-  top: -10%;
+  top: 0%;
   left: 50%;
   padding: 2rem 1rem;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
   border-radius: 0.25rem;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  min-width: 15rem;
 }
 
 .confirmation-form.open {
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .confirmation-form__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding-top: 1rem;
 }
 
 .confirmation-form__buttons button {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .listing-feature {
