@@ -48,7 +48,7 @@ function AgentContactForm({ agent, name, email }) {
         <span>
           Message sent.
           {' '}
-          {agent.name}
+          {agent.first_name}
           {' '}
           will get back to you soon.
         </span>
