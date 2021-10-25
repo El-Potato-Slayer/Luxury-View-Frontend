@@ -6,7 +6,6 @@ function AgentContactForm({ agent, name, email }) {
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [inputName, setInputName] = useState(name);
   const [inputEmail, setInputEmail] = useState(email);
-  console.log(inputName);
 
   return (
     <form className="agent-contact-form">

@@ -74,6 +74,9 @@ function AppointmentsList() {
       <div className="page">
         <h1 data-testid="appointments" className="page-title">Appointments</h1>
 
+        {!appointments.length && !loading && (
+        <p className="appointments__empty-notification">You dont have any appointments scheduled</p>
+        )}
         <div className="listings">
           {loading && (
           <>

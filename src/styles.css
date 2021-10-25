@@ -883,6 +883,11 @@ fieldset {
   padding-bottom: 0.5rem;
 }
 
+.appointments__empty-notification {
+  text-align: center;
+  width: 100%;
+}
+
 .listing-page-type {
   text-transform: uppercase;
   font-size: 0.75rem;
