@@ -3,7 +3,7 @@ This is the frontend of the Luxury View Application. Users are able to register,
 
 ![image](https://user-images.githubusercontent.com/43865875/132005517-710bde91-d240-4d08-aee7-a2bc0229e580.png)
 
-[Live Demo](https://luxury-view-frontend-6bbrbvv5l-el-potato-slayer.vercel.app/)
+[Live Demo](https://luxury-view-frontend.vercel.app/)
 
 ## Built with
 - HTML
