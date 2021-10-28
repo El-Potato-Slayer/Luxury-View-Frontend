@@ -25,6 +25,7 @@ function App() {
   } else {
     location = history.location.state.from.pathname;
   }
+  console.log(location);
   return (
     <div data-testid="app" className="App">
       <Navbar />
@@ -39,10 +40,16 @@ function App() {
           <AgentsList />
         </Route>
         <Route path="/login">
-          {isLoggedIn ? <Redirect to={location} /> : <Login />}
+          {isLoggedIn && location === '/login' && (
+            <Redirect to="/" />
+          )}
+          {isLoggedIn && location !== '/login' ? <Redirect to={location} /> : <Login />}
         </Route>
         <Route path="/register">
-          {isLoggedIn ? <Redirect to={location} /> : <Register />}
+          {isLoggedIn && location === '/register' && (
+            <Redirect to="/" />
+          )}
+          {isLoggedIn && location !== '/register' ? <Redirect to={location} /> : <Register />}
         </Route>
         <Route path="/mansions/:id">
           <Mansion />
